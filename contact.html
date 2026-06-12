@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Total Wisdom Co.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .map-wrap {
+      margin-top: 5rem; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); position: relative; box-shadow: var(--shadow-sm);
+    }
+    .map-wrap iframe {
+      width: 100%; height: 420px; display: block;
+      filter: invert(92%) hue-rotate(180deg) saturate(0.4) brightness(0.9) contrast(0.95);
+    }
+    .map-label {
+      position: absolute; top: 1.2rem; left: 1.2rem;
+      background: var(--bg-dark); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-sm);
+      padding: .75rem 1.2rem; display: flex; align-items: center; gap: .75rem;
+    }
+    .map-label svg { width: 18px; height: 18px; color: var(--cyan); flex-shrink: 0; }
+    .map-label span { font-size: .82rem; font-family: var(--font-sans); font-weight: 600; color: var(--text-on-dark); letter-spacing: .02em; }
+
+    .social-row { display: flex; gap: 1rem; margin-top: 2rem; }
+    .social-btn {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: var(--bg-card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-2); transition: var(--trans);
+    }
+    .social-btn:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-dim); }
+    .social-btn svg { width: 18px; height: 18px; }
+
+    .form-note { font-size: .78rem; color: var(--text-3); text-align: center; margin-top: 1rem; }
+
+    .success-msg {
+      display: none; text-align: center; padding: 2rem;
+      color: var(--cyan); font-family: var(--font-sans); font-weight: 700; font-size: .95rem;
+    }
+    .success-msg svg { width: 48px; height: 48px; margin: 0 auto 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"    data-page="home">Home</a></li>
+      <li><a href="services.html" data-page="services">Services</a></li>
+      <li><a href="products.html" data-page="products">Products</a></li>
+      <li><a href="about.html"    data-page="about">About Us</a></li>
+      <li><a href="contact.html"  data-page="contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span>Contact</span>
+    </div>
+    <div class="section-tag">Get In Touch</div>
+    <h1>Let's <span class="accent">Secure</span> Your World</h1>
+    <p>Ready to protect your IT and OT infrastructure? Our experts are standing by to assess your needs and recommend the right solutions.</p>
+  </div>
+</section>
+
+<!-- ── CONTACT MAIN ── -->
+<section class="section">
+  <div class="container">
+    <div class="contact-wrapper">
+
+      <!-- Info Panel -->
+      <div>
+        <div class="section-tag reveal">Reach Us</div>
+        <h2 class="section-title reveal">Contact <span class="accent">Information</span></h2>
+        <p class="reveal" style="margin-bottom:2.5rem;">Whether you have a security incident, need a consultation, or want to learn more about our products and services — our team is here to help.</p>
+
+        <div class="contact-info-list">
+          <div class="ci-item reveal">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Our Location</h4>
+              <p>BurJuman Business Tower, Al Mankhool<br />Bur Dubai, Dubai, UAE</p>
+            </div>
+          </div>
+
+          <div class="ci-item reveal">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63 2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <h4>Call Center</h4>
+              <p><a href="tel:+971508338940">+971 50 833 8940</a></p>
+              <p><a href="tel:+971508015940">+971 50 801 5940</a></p>
+            </div>
+          </div>
+
+          <div class="ci-item reveal">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:info@totalwisdom.com">info@totalwisdom.com</a></p>
+            </div>
+          </div>
+
+          <div class="ci-item reveal">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <div>
+              <h4>Website</h4>
+              <p><a href="https://totalwisdom.com" target="_blank" rel="noopener">totalwisdom.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-row reveal">
+          <a href="#" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="var(--bg-0)" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-box reveal d1">
+        <h3 style="margin-bottom:1.75rem; font-size:1.1rem;">Send Us a <span class="accent">Message</span></h3>
+
+        <div class="success-msg" id="successMsg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <p>Thank you! Your message has been sent.<br />Our team will be in touch shortly.</p>
+        </div>
+
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" name="fname" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name *</label>
+              <input type="text" id="lname" name="lname" placeholder="Doe" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+971 50 000 0000" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="company">Company / Organization</label>
+            <input type="text" id="company" name="company" placeholder="Your company name" />
+          </div>
+          <div class="form-group">
+            <label for="interest">Area of Interest</label>
+            <select id="interest" name="interest">
+              <option value="" disabled selected>Select a topic</option>
+              <option>OT/ICS Security Solutions</option>
+              <option>IT Firewall &amp; Email Protection</option>
+              <option>Data Center &amp; Virtualization</option>
+              <option>Endpoint &amp; User Protection</option>
+              <option>Network Infrastructure &amp; Security</option>
+              <option>Data Backup &amp; Disaster Recovery</option>
+              <option>Industrial Security Assessment</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your security requirements, environment, or any specific challenges you're facing..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full" style="margin-top:.5rem;">Send Message</button>
+          <p class="form-note">We respect your privacy. Your information will never be shared with third parties.</p>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Map -->
+    <div class="map-wrap reveal">
+      <div class="map-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>BurJuman Business Tower, Bur Dubai, Dubai, UAE</span>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.5316497987556!2d55.29601931501366!3d25.252984283862246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43357b87f04f%3A0xb4e7b08f0f0c7fc5!2sBurJuman%20Business%20Tower!5e0!3m2!1sen!2sae!4v1678900000000!5m2!1sen!2sae"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Total Wisdom Co. Location — BurJuman Business Tower, Dubai">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+          </a>
+          <p>Dubai-based technology solutions provider specializing in cybersecurity, networking, and virtualization services.</p>
+          <p class="tagline">BurJuman Business Tower, Bur Dubai, Dubai, UAE</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Solutions</h5>
+          <ul>
+            <li><a href="products.html">OT/ICS Security</a></li>
+            <li><a href="products.html">Data Center</a></li>
+            <li><a href="products.html">IT Firewall</a></li>
+            <li><a href="products.html">Endpoint Protection</a></li>
+            <li><a href="products.html">Network Security</a></li>
+            <li><a href="products.html">Backup &amp; Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p><a href="tel:+971508338940">+971 50 833 8940</a></p>
+          <p><a href="tel:+971508015940">+971 50 801 5940</a></p>
+          <p><a href="mailto:info@totalwisdom.com">info@totalwisdom.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2024 Total Wisdom Co. All rights reserved.</p>
+      <p>Secure IT &bull; Protect OT &bull; Deliver Smart Technology</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  /* Contact page: show success message on submit */
+  const form = document.getElementById('contactForm');
+  const msg  = document.getElementById('successMsg');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      form.style.display = 'none';
+      msg.style.display  = 'block';
+    });
+  }
+</script>
+</body>
+</html>

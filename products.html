@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — Total Wisdom Co.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"    data-page="home">Home</a></li>
+      <li><a href="services.html" data-page="services">Services</a></li>
+      <li><a href="products.html" data-page="products">Products</a></li>
+      <li><a href="about.html"    data-page="about">About Us</a></li>
+      <li><a href="contact.html"  data-page="contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Products</span>
+    </div>
+    <div class="section-tag">Technology Partners</div>
+    <h1>Our <span class="accent">Products</span></h1>
+    <p>Partnering with 15+ world-leading technology vendors to deliver best-in-class cybersecurity, infrastructure, and data protection solutions.</p>
+  </div>
+</section>
+
+<!-- ── PRODUCTS CATALOG ── -->
+<section class="section">
+  <div class="container">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-cat="all">All Products</button>
+      <button class="filter-btn" data-cat="ot-ics">OT/ICS Security</button>
+      <button class="filter-btn" data-cat="datacenter">Data Center</button>
+      <button class="filter-btn" data-cat="firewall">IT Firewall</button>
+      <button class="filter-btn" data-cat="endpoint">Endpoint Protection</button>
+      <button class="filter-btn" data-cat="network">Network Security</button>
+      <button class="filter-btn" data-cat="backup">Backup &amp; Recovery</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid">
+
+      <!-- VMware -->
+      <div class="prod-card reveal" data-cat="datacenter">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/wm1-640x478.webp" alt="VMware" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Data Center Hardware &amp; Virtualization</p>
+          <p class="prod-name">VMware</p>
+        </div>
+      </div>
+
+      <!-- CYRUS Unidirectional -->
+      <div class="prod-card reveal d1" data-cat="ot-ics">
+        <div class="prod-img prod-img-logo">
+          <img src="logo-cyrus.png" alt="CYRUS Unidirectional" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">OT / ICS Security Solutions</p>
+          <p class="prod-name">CYRUS Unidirectional</p>
+        </div>
+      </div>
+
+      <!-- CYRUS Data Diode -->
+      <div class="prod-card reveal d2" data-cat="ot-ics">
+        <div class="prod-img prod-img-logo">
+          <img src="logo-cyrus.png" alt="CYRUS Data Diode" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">OT / ICS Security Solutions</p>
+          <p class="prod-name">CYRUS Data Diode</p>
+        </div>
+      </div>
+
+      <!-- CYRUS ICS Firewall -->
+      <div class="prod-card reveal d3" data-cat="ot-ics">
+        <div class="prod-img prod-img-logo">
+          <img src="logo-cyrus.png" alt="CYRUS ICS Firewall" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">OT / ICS Security Solutions</p>
+          <p class="prod-name">CYRUS ICS Firewall</p>
+        </div>
+      </div>
+
+      <!-- Veritas -->
+      <div class="prod-card reveal" data-cat="backup">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/veritas-1-640x478.webp" alt="Veritas" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Data Backup &amp; Disaster Recovery</p>
+          <p class="prod-name">Veritas</p>
+        </div>
+      </div>
+
+      <!-- Tenable -->
+      <div class="prod-card reveal d1" data-cat="network">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/Tenable-1-640x478.webp" alt="Tenable" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Network Infrastructure &amp; Security</p>
+          <p class="prod-name">Tenable</p>
+        </div>
+      </div>
+
+      <!-- Symantec -->
+      <div class="prod-card reveal d2" data-cat="endpoint">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/Symantec-2-640x478.webp" alt="Symantec" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Endpoint &amp; User Protection</p>
+          <p class="prod-name">Symantec</p>
+        </div>
+      </div>
+
+      <!-- Sophos -->
+      <div class="prod-card reveal d3" data-cat="firewall">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/sophos-2-640x478.webp" alt="Sophos" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">IT Firewall &amp; Email Protection</p>
+          <p class="prod-name">Sophos</p>
+        </div>
+      </div>
+
+      <!-- Microsoft -->
+      <div class="prod-card reveal" data-cat="network">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/Microsoft-1-640x478.webp" alt="Microsoft" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Network Infrastructure &amp; Security</p>
+          <p class="prod-name">Microsoft</p>
+        </div>
+      </div>
+
+      <!-- MDaemon -->
+      <div class="prod-card reveal d1" data-cat="network">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/Cisco-1-640x478.webp" alt="MDaemon" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Network Infrastructure &amp; Security</p>
+          <p class="prod-name">MDaemon</p>
+        </div>
+      </div>
+
+      <!-- Cisco -->
+      <div class="prod-card reveal d2" data-cat="datacenter">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/Cisco-1-640x478.webp" alt="Cisco" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Data Center Hardware &amp; Virtualization</p>
+          <p class="prod-name">Cisco</p>
+        </div>
+      </div>
+
+      <!-- Fortinet -->
+      <div class="prod-card reveal d3" data-cat="firewall">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/Fortinet-640x478.webp" alt="Fortinet" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">IT Firewall &amp; Email Protection</p>
+          <p class="prod-name">Fortinet</p>
+        </div>
+      </div>
+
+      <!-- HPE -->
+      <div class="prod-card reveal" data-cat="datacenter">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/hp-2-640x478.webp" alt="Hewlett Packard Enterprise" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Data Center Hardware &amp; Virtualization</p>
+          <p class="prod-name">Hewlett Packard Enterprise</p>
+        </div>
+      </div>
+
+      <!-- Kaspersky -->
+      <div class="prod-card reveal d1" data-cat="endpoint">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/kasper-1-640x478.webp" alt="Kaspersky" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Endpoint &amp; User Protection</p>
+          <p class="prod-name">Kaspersky</p>
+        </div>
+      </div>
+
+      <!-- Bitdefender -->
+      <div class="prod-card reveal d2" data-cat="endpoint">
+        <div class="prod-img">
+          <img src="https://totalwisdom.com/wp-content/uploads/2024/02/Bitdefender-1-640x478.webp" alt="Bitdefender" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">Endpoint &amp; User Protection</p>
+          <p class="prod-name">Bitdefender</p>
+        </div>
+      </div>
+
+    </div><!-- /products-grid -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Need Help Choosing the <span class="accent">Right Solution?</span></h2>
+      <p>Our experts will assess your environment and recommend the best-fit products for your security needs.</p>
+      <div class="cta-actions">
+        <a href="contact.html"  class="btn-primary lg">Talk to an Expert</a>
+        <a href="services.html" class="btn-ghost lg">View Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+          </a>
+          <p>Dubai-based technology solutions provider specializing in cybersecurity, networking, and virtualization services.</p>
+          <p class="tagline">BurJuman Business Tower, Bur Dubai, Dubai, UAE</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Categories</h5>
+          <ul>
+            <li><a href="products.html">OT/ICS Security</a></li>
+            <li><a href="products.html">Data Center</a></li>
+            <li><a href="products.html">IT Firewall</a></li>
+            <li><a href="products.html">Endpoint Protection</a></li>
+            <li><a href="products.html">Network Security</a></li>
+            <li><a href="products.html">Backup &amp; Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p><a href="tel:+971508338940">+971 50 833 8940</a></p>
+          <p><a href="tel:+971508015940">+971 50 801 5940</a></p>
+          <p><a href="mailto:info@totalwisdom.com">info@totalwisdom.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2024 Total Wisdom Co. All rights reserved.</p>
+      <p>Secure IT &bull; Protect OT &bull; Deliver Smart Technology</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

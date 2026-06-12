@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Total Wisdom Co.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .deliverables-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem;
+    }
+    .deliv-item {
+      display: flex; align-items: flex-start; gap: .9rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 1.2rem;
+      transition: var(--trans);
+    }
+    .deliv-item:hover { border-color: var(--border-h); }
+    .deliv-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--cyan); box-shadow: 0 0 8px var(--cyan);
+      flex-shrink: 0; margin-top: .55rem;
+    }
+    .deliv-item p { font-size: .87rem; margin: 0; }
+    @media(max-width:900px){ .deliverables-grid{ grid-template-columns: 1fr 1fr; } }
+    @media(max-width:480px){ .deliverables-grid{ grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"    data-page="home">Home</a></li>
+      <li><a href="services.html" data-page="services">Services</a></li>
+      <li><a href="products.html" data-page="products">Products</a></li>
+      <li><a href="about.html"    data-page="about">About Us</a></li>
+      <li><a href="contact.html"  data-page="contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span>Services</span>
+    </div>
+    <div class="section-tag">Industrial Network Security</div>
+    <h1>Our <span class="accent">Services</span></h1>
+    <p>Comprehensive OT/ICS/SCADA security services aligned with IEC 62443, NIST SP 800-82, and global best practices — protecting critical infrastructure across every sector.</p>
+  </div>
+</section>
+
+<!-- ── INTRO ── -->
+<section class="section-sm" style="background:var(--bg-1); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="max-width:820px; margin:0 auto; text-align:center;">
+      <p class="reveal" style="font-size:1.05rem; line-height:1.85;">
+        Industrial networks — OT/ICS/SCADA/DCS — form the backbone of critical infrastructure in oil &amp; gas, petrochemicals, power generation, water utilities, transportation, and manufacturing. Any cyber-attack or operational disruption may lead to production downtime, financial loss, and safety hazards. Our services provide a comprehensive framework for securing industrial networks and ensuring resilient operations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── STANDARDS FRAMEWORK ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag reveal">Methodology</div>
+    <h2 class="section-title reveal">Standards-Based <span class="accent">Framework</span></h2>
+    <p class="section-sub reveal">Our methodology follows global best practices and sector-specific standards to ensure full compliance and maximum security posture.</p>
+    <div class="standards-grid reveal">
+      <div class="standard-item">
+        <div class="std-badge">IEC 62443</div>
+        <p>Security requirements for Industrial Automation and Control Systems (IACS), zone/conduit architecture, Security Levels (SL0–SL4), and Foundational Requirements (FR1–FR7).</p>
+      </div>
+      <div class="standard-item">
+        <div class="std-badge">NIST SP 800-82</div>
+        <p>Practical guidance for OT/ICS/SCADA cybersecurity risk management and security control implementation.</p>
+      </div>
+      <div class="standard-item">
+        <div class="std-badge">NIST CSF 2.0</div>
+        <p>Cybersecurity Framework covering Identify, Protect, Detect, Respond, and Recover functions across the organization.</p>
+      </div>
+      <div class="standard-item">
+        <div class="std-badge">IEC 62351</div>
+        <p>Security for communication in power systems including IEC 61850 protocols and substation automation security.</p>
+      </div>
+      <div class="standard-item">
+        <div class="std-badge">ISO/IEC 27019</div>
+        <p>Information security controls specifically tailored for the energy sector and utility organizations (2024 edition).</p>
+      </div>
+      <div class="standard-item">
+        <div class="std-badge">NERC-CIP</div>
+        <p>Mandatory standards for critical infrastructure protection in energy — covering physical and cyber security requirements.</p>
+      </div>
+      <div class="standard-item">
+        <div class="std-badge">API 1164</div>
+        <p>Cybersecurity framework for pipeline SCADA systems, addressing risk management and security architecture.</p>
+      </div>
+      <div class="standard-item">
+        <div class="std-badge">NIS2 (EU)</div>
+        <p>Governance and reporting requirements for critical industries operating in or connected to European markets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CORE SERVICE AREAS ── -->
+<section class="section" style="background:var(--bg-1);">
+  <div class="container">
+    <div class="section-tag reveal">Core Services</div>
+    <h2 class="section-title reveal">What We <span class="accent">Deliver</span></h2>
+    <p class="section-sub reveal">Six comprehensive service domains designed to address every dimension of industrial cybersecurity.</p>
+    <div class="core-grid">
+
+      <div class="core-card reveal">
+        <div class="core-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h3>Assessment &amp; Risk Analysis</h3>
+        <ul class="core-bullets">
+          <li><span class="bullet-dot"></span><span>Asset discovery and inventory of OT/ICS devices and communication flows</span></li>
+          <li><span class="bullet-dot"></span><span>Network zoning and conduit definition</span></li>
+          <li><span class="bullet-dot"></span><span>Cyber risk assessment and Target Security Level (SL-T) setting</span></li>
+          <li><span class="bullet-dot"></span><span>GAP Analysis based on IEC 62443 maturity model</span></li>
+        </ul>
+      </div>
+
+      <div class="core-card reveal d1">
+        <div class="core-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h4M7 11h2"/></svg>
+        </div>
+        <h3>Security Architecture &amp; Design</h3>
+        <ul class="core-bullets">
+          <li><span class="bullet-dot"></span><span>Layered architecture based on the Purdue Enterprise Reference Model</span></li>
+          <li><span class="bullet-dot"></span><span>Segmentation through zones and conduits with defined trust boundaries</span></li>
+          <li><span class="bullet-dot"></span><span>Industrial DMZ design and IT/OT traffic segregation</span></li>
+          <li><span class="bullet-dot"></span><span>Selection and design of industrial-grade security controls (firewalls, IDS/IPS, data diodes)</span></li>
+        </ul>
+      </div>
+
+      <div class="core-card reveal">
+        <div class="core-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>Implementation &amp; Hardening</h3>
+        <ul class="core-bullets">
+          <li><span class="bullet-dot"></span><span>Deployment and configuration of industrial firewalls and intrusion detection systems</span></li>
+          <li><span class="bullet-dot"></span><span>Hardening of PLCs, HMIs, RTUs, and engineering workstations</span></li>
+          <li><span class="bullet-dot"></span><span>Identity and access management (IAM, MFA, role-based access)</span></li>
+          <li><span class="bullet-dot"></span><span>Data encryption in transit and at rest, plus secure key management</span></li>
+        </ul>
+      </div>
+
+      <div class="core-card reveal d1">
+        <div class="core-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Monitoring &amp; Incident Response</h3>
+        <ul class="core-bullets">
+          <li><span class="bullet-dot"></span><span>Deployment of industrial SIEM and SOC for OT environments</span></li>
+          <li><span class="bullet-dot"></span><span>Continuous log collection, anomaly detection, and threat intelligence integration</span></li>
+          <li><span class="bullet-dot"></span><span>Development of Incident Response Playbooks tailored for OT/ICS</span></li>
+          <li><span class="bullet-dot"></span><span>Red Team/Blue Team and Table-top exercises for resilience testing</span></li>
+        </ul>
+      </div>
+
+      <div class="core-card reveal">
+        <div class="core-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <h3>Supply Chain Security</h3>
+        <ul class="core-bullets">
+          <li><span class="bullet-dot"></span><span>Supplier security assessment and compliance (IEC 62443-4-1, NERC-CIP-013)</span></li>
+          <li><span class="bullet-dot"></span><span>Secure Development Lifecycle (SDL) and patch management processes</span></li>
+        </ul>
+      </div>
+
+      <div class="core-card reveal d1">
+        <div class="core-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Policy, Training &amp; Audit</h3>
+        <ul class="core-bullets">
+          <li><span class="bullet-dot"></span><span>Development of security policies and OT-specific procedures</span></li>
+          <li><span class="bullet-dot"></span><span>Workforce training and awareness programs for operators and engineers</span></li>
+          <li><span class="bullet-dot"></span><span>Periodic audits and continuous improvement reviews</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── VALUE PROPOSITION ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag reveal">Why Choose Us</div>
+    <h2 class="section-title centered reveal">Value <span class="accent">Proposition</span></h2>
+    <p class="section-sub centered reveal">Measurable outcomes that directly impact your security posture and business continuity.</p>
+    <div class="value-grid">
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h4>Reduced Cyber Risk</h4>
+        <p>Measurably reduced cyber risk exposure to critical infrastructures and industrial operations.</p>
+      </div>
+      <div class="value-card reveal d1">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        </div>
+        <h4>Enhanced Resilience</h4>
+        <p>Enhanced business continuity and operational resilience for industrial environments.</p>
+      </div>
+      <div class="value-card reveal d2">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        </div>
+        <h4>Standards Compliance</h4>
+        <p>Full compliance with international standards: IEC 62443, NIST, NERC-CIP, and NIS2.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h4>Minimized Losses</h4>
+        <p>Reduced downtime and financial losses from cyber incidents through proactive defense.</p>
+      </div>
+      <div class="value-card reveal d1">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h4>Trust &amp; Safety</h4>
+        <p>Improved trust, reliability, and safety across all industrial operations and processes.</p>
+      </div>
+      <div class="value-card reveal d2">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h4>Measurable KPIs</h4>
+        <p>Management dashboards with KPI/KRI metrics providing real-time visibility into your security posture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DELIVERABLES ── -->
+<section class="section-sm" style="background:var(--bg-1);">
+  <div class="container">
+    <div class="section-tag reveal">Outputs</div>
+    <h2 class="section-title reveal">Key <span class="accent">Deliverables</span></h2>
+    <p class="section-sub reveal">Tangible, actionable outputs from every engagement.</p>
+    <div class="deliverables-grid">
+      <div class="deliv-item reveal">
+        <div class="deliv-dot"></div>
+        <p>Industrial network architecture diagrams (zones/conduits)</p>
+      </div>
+      <div class="deliv-item reveal d1">
+        <div class="deliv-dot"></div>
+        <p>Risk assessment reports and Security Level targets (SL-T)</p>
+      </div>
+      <div class="deliv-item reveal d2">
+        <div class="deliv-dot"></div>
+        <p>GAP Analysis and remediation roadmap</p>
+      </div>
+      <div class="deliv-item reveal">
+        <div class="deliv-dot"></div>
+        <p>Incident Response Playbooks and Disaster Recovery scenarios</p>
+      </div>
+      <div class="deliv-item reveal d1">
+        <div class="deliv-dot"></div>
+        <p>Management dashboards with KPI/KRI for security posture</p>
+      </div>
+      <div class="deliv-item reveal d2">
+        <div class="deliv-dot"></div>
+        <p>Hardening checklists and configuration baselines</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TARGET INDUSTRIES ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag reveal">Sectors</div>
+    <h2 class="section-title centered reveal">Target <span class="accent">Industries</span></h2>
+    <p class="section-sub centered reveal">Serving critical infrastructure sectors worldwide with tailored industrial security expertise.</p>
+    <div class="industries-grid">
+
+      <div class="industry-item reveal">
+        <div class="industry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4"/></svg>
+        </div>
+        <span>Oil, Gas &amp; Petrochemicals</span>
+      </div>
+      <div class="industry-item reveal d1">
+        <div class="industry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <span>Power Generation &amp; Energy</span>
+      </div>
+      <div class="industry-item reveal d2">
+        <div class="industry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <span>Water &amp; Wastewater</span>
+      </div>
+      <div class="industry-item reveal">
+        <div class="industry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <span>Mining &amp; Metallurgy</span>
+      </div>
+      <div class="industry-item reveal d1">
+        <div class="industry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <span>Transportation</span>
+      </div>
+      <div class="industry-item reveal d2">
+        <div class="industry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V10l8-6 8 6v10M10 20v-6h4v6"/></svg>
+        </div>
+        <span>Manufacturing &amp; Automotive</span>
+      </div>
+      <div class="industry-item reveal">
+        <div class="industry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <span>Defense &amp; Critical Infrastructure</span>
+      </div>
+      <div class="industry-item reveal d1">
+        <div class="industry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+        </div>
+        <span>Cloud &amp; Enterprise IT</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Start Your <span class="accent">Security Assessment</span></h2>
+      <p>Our certified experts are ready to evaluate your industrial network and deliver a tailored security roadmap.</p>
+      <div class="cta-actions">
+        <a href="contact.html"  class="btn-primary lg">Request Assessment</a>
+        <a href="products.html" class="btn-ghost lg">View Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+          </a>
+          <p>Dubai-based technology solutions provider specializing in cybersecurity, networking, and virtualization services.</p>
+          <p class="tagline">BurJuman Business Tower, Bur Dubai, Dubai, UAE</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">Assessment &amp; Risk Analysis</a></li>
+            <li><a href="services.html">Security Architecture</a></li>
+            <li><a href="services.html">Implementation &amp; Hardening</a></li>
+            <li><a href="services.html">Monitoring &amp; IR</a></li>
+            <li><a href="services.html">Supply Chain Security</a></li>
+            <li><a href="services.html">Policy &amp; Training</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p><a href="tel:+971508338940">+971 50 833 8940</a></p>
+          <p><a href="tel:+971508015940">+971 50 801 5940</a></p>
+          <p><a href="mailto:info@totalwisdom.com">info@totalwisdom.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2024 Total Wisdom Co. All rights reserved.</p>
+      <p>Secure IT &bull; Protect OT &bull; Deliver Smart Technology</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
