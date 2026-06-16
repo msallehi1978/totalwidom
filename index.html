@@ -6,8 +6,9 @@
   <title>Total Wisdom Co. — Secure IT. Protect OT. Deliver Smart Technology.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="image-accordion.css" />
   <style>
     /* ── HOME-SPECIFIC ── */
     .home-about { background: linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 60%, var(--bg-0) 100%); }
@@ -19,6 +20,70 @@
     @media(max-width:900px){ .fp-grid{ grid-template-columns:repeat(2,1fr); } }
     @media(max-width:480px){ .fp-grid{ grid-template-columns:1fr; } }
     .view-all-wrap { text-align:center; margin-top: 2.5rem; }
+
+    /* ── HERO BACKGROUND VIDEO (right half) ── */
+    .home-hero.hero-shaded { background: #090834; }
+    .hero-video {
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 50%; z-index: 0; overflow: hidden;
+      pointer-events: none; background: #090834;
+    }
+    .hero-video .hv {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      opacity: 0; transition: opacity .6s linear;
+    }
+    .hero-video .hv.show { opacity: 1; }
+    /* Blend the video's left edge into the navy text column + soft vignette */
+    .hero-video::after {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(90deg, #090834 0%, rgba(9,8,52,.55) 24%, rgba(9,8,52,0) 58%),
+        linear-gradient(0deg, rgba(9,8,52,.45) 0%, rgba(9,8,52,0) 38%);
+    }
+    .hero-shaded .hero-grid { display: none; }
+
+    @media (max-width: 900px) {
+      /* Stack: video fills the hero behind the content with a stronger overlay */
+      .hero-video { width: 100%; }
+      .hero-video::after {
+        background: linear-gradient(180deg, rgba(9,8,52,.86) 0%, rgba(9,8,52,.74) 55%, rgba(9,8,52,.82) 100%);
+      }
+    }
+
+    /* Hero text recolored for the dark blue→purple plasma */
+    .hero-shaded .hero-badge {
+      color: rgba(255,255,255,.82); border-color: rgba(255,255,255,.24);
+      background: rgba(255,255,255,.04); backdrop-filter: blur(4px);
+    }
+    .hero-shaded .badge-pulse { background: #ff4d6b; }
+    .hero-shaded .badge-pulse::before { border-color: #ff4d6b; }
+    .hero-shaded .hero-title { color: #f5f3ff; }
+    .hero-shaded .hero-title .accent { color: #ff4d6b; }
+    .hero-shaded .hero-sub { color: rgba(255,255,255,.74); }
+    .hero-shaded .hero-stats { border-top-color: rgba(255,255,255,.16); }
+    .hero-shaded .stat-val, .hero-shaded .stat-suf { color: #ffffff; }
+    .hero-shaded .stat-lbl { color: rgba(255,255,255,.56); }
+    .hero-shaded .stat-div { background: rgba(255,255,255,.2); }
+    .hero-shaded .hero-scroll span { color: rgba(255,255,255,.6); }
+    .hero-shaded .scroll-bar { background: rgba(255,255,255,.22); }
+    .hero-shaded .scroll-bar::after { background: #ffffff; }
+
+    /* Buttons over the dark hero */
+    .hero-shaded .btn-primary { background: #ffffff; color: #0a0a1a; border-color: #ffffff; }
+    .hero-shaded .btn-primary:hover { background: transparent; color: #ffffff; border-color: rgba(255,255,255,.6); }
+    .hero-shaded .btn-ghost { color: #ffffff; border-color: rgba(255,255,255,.38); }
+    .hero-shaded .btn-ghost:hover { background: #ffffff; color: #0a0a1a; border-color: #ffffff; }
+
+    /* Navbar sits over the dark hero while at the top (not yet scrolled) */
+    #navbar:not(.scrolled) .nav-logo img { filter: brightness(0) invert(1); }
+    #navbar:not(.scrolled) .nav-links a:not(.nav-cta) { color: rgba(255,255,255,.82); }
+    #navbar:not(.scrolled) .nav-links a:not(.nav-cta):hover,
+    #navbar:not(.scrolled) .nav-links a:not(.nav-cta).active { color: #ffffff; }
+    #navbar:not(.scrolled) .nav-links a:not(.nav-cta)::after { background: #ffffff; }
+    #navbar:not(.scrolled) .nav-cta { color: #ff4d6b !important; border-color: #ff4d6b; }
+    #navbar:not(.scrolled) .nav-cta:hover { background: #ff4d6b; color: #ffffff !important; }
+    #navbar:not(.scrolled) .nav-toggle span { background: #ffffff; }
   </style>
 </head>
 <body>
@@ -43,7 +108,11 @@
 </nav>
 
 <!-- ── HERO ── -->
-<section class="home-hero">
+<section class="home-hero hero-shaded">
+  <div class="hero-video" aria-hidden="true">
+    <video class="hv" src="assets/output.mp4" autoplay muted playsinline preload="auto"></video>
+    <video class="hv" src="assets/output.mp4" muted playsinline preload="auto"></video>
+  </div>
   <div class="hero-grid"></div>
   <div class="container">
     <div class="hero-badge">
@@ -69,7 +138,7 @@
       </div>
       <div class="stat-div"></div>
       <div class="stat">
-        <span class="stat-val" data-target="3">0</span><span class="stat-suf">+</span>
+        <span class="stat-val" data-target="4">0</span><span class="stat-suf">+</span>
         <span class="stat-lbl">International Awards</span>
       </div>
       <div class="stat-div"></div>
@@ -198,48 +267,7 @@
     <div class="section-tag reveal">Technology Partners</div>
     <h2 class="section-title centered reveal">Featured <span class="accent">Products</span></h2>
     <p class="section-sub centered reveal">Partnering with the world's leading technology vendors to deliver best-in-class security and infrastructure solutions.</p>
-    <div class="fp-grid">
-      <div class="prod-card reveal" data-cat="ot-ics">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/ICS-640x478.webp" alt="CYRUS ICS Firewall" loading="lazy" />
-          <div class="prod-img-overlay"></div>
-        </div>
-        <div class="prod-body">
-          <p class="prod-cat">OT/ICS Security</p>
-          <p class="prod-name">CYRUS ICS Firewall</p>
-        </div>
-      </div>
-      <div class="prod-card reveal d1" data-cat="datacenter">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/wm1-640x478.webp" alt="VMware" loading="lazy" />
-          <div class="prod-img-overlay"></div>
-        </div>
-        <div class="prod-body">
-          <p class="prod-cat">Data Center & Virtualization</p>
-          <p class="prod-name">VMware</p>
-        </div>
-      </div>
-      <div class="prod-card reveal d2" data-cat="firewall">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/Fortinet-640x478.webp" alt="Fortinet" loading="lazy" />
-          <div class="prod-img-overlay"></div>
-        </div>
-        <div class="prod-body">
-          <p class="prod-cat">IT Firewall & Email Protection</p>
-          <p class="prod-name">Fortinet</p>
-        </div>
-      </div>
-      <div class="prod-card reveal d3" data-cat="endpoint">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/kasper-1-640x478.webp" alt="Kaspersky" loading="lazy" />
-          <div class="prod-img-overlay"></div>
-        </div>
-        <div class="prod-body">
-          <p class="prod-cat">Endpoint & User Protection</p>
-          <p class="prod-name">Kaspersky</p>
-        </div>
-      </div>
-    </div>
+    <div id="fpAccordion" class="reveal" style="margin-top:3rem;"></div>
     <div class="view-all-wrap reveal">
       <a href="products.html" class="btn-primary">View All Products</a>
     </div>
@@ -268,7 +296,7 @@
             <div class="l">Technology Partners</div>
           </div>
           <div class="glow-stat">
-            <div class="n"><span data-target="3">0</span> 🥇</div>
+            <div class="n"><span data-target="4">0</span> 🥇</div>
             <div class="l">International Awards</div>
           </div>
           <div class="glow-stat">
@@ -297,27 +325,36 @@
           <img src="https://totalwisdom.com/wp-content/uploads/2025/11/goldmedal.webp" alt="Gold Medal" />
         </div>
         <div class="award-badge gold-badge">Gold Medal</div>
-        <h3>Geneva International Exhibition of Inventions</h3>
-        <p>Recognized as a gold medal invention at the world's foremost platform for innovators and researchers.</p>
-        <span class="award-year">2023</span>
+        <h3>Geneva Inventions Expo</h3>
+        <p>CYRUS was honored with the Gold Medal at the world's most prestigious invention exhibition for its groundbreaking innovation in industrial cybersecurity.</p>
+        <span class="award-year">2024</span>
       </div>
       <div class="award-card reveal d1">
+        <div class="award-medal silver">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/silver.webp" alt="Silver Medal" />
+        </div>
+        <div class="award-badge silver-badge">Silver Medal</div>
+        <h3>Silicon Valley Invention Festival</h3>
+        <p>This highly respected tech event recognized CYRUS for its impact in the field of information technology and cybersecurity innovation.</p>
+        <span class="award-year">2024</span>
+      </div>
+      <div class="award-card reveal d2">
         <div class="award-medal gold">
           <img src="https://totalwisdom.com/wp-content/uploads/2025/11/goldmedal-1.webp" alt="Gold Medal" />
         </div>
         <div class="award-badge gold-badge">Gold Medal</div>
         <h3>iCAN Innovation Festival</h3>
-        <p>Gold medal winner at the International Invention, Innovation &amp; Technology Exhibition in Kuala Lumpur.</p>
-        <span class="award-year">2024</span>
+        <p>As one of the largest global events in innovation and invention, iCAN awarded CYRUS the top prize for its contribution to secure industrial systems.</p>
+        <span class="award-year">2023</span>
       </div>
-      <div class="award-card reveal d2">
-        <div class="award-medal silver">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/silver.webp" alt="Silver Medal" />
+      <div class="award-card reveal d3">
+        <div class="award-medal gold">
+          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/goldmedal.webp" alt="Gold Medal" />
         </div>
-        <div class="award-badge silver-badge">Silver Medal</div>
-        <h3>Silicon Valley International Invention Festival</h3>
-        <p>Silver medal recipient at the prestigious innovation competition in the heart of global tech innovation.</p>
-        <span class="award-year">2024</span>
+        <div class="award-badge gold-badge">Gold Medal</div>
+        <h3>Geneva Inventions Expo</h3>
+        <p>For the second consecutive year, CYRUS received the Gold Medal for its excellence and originality in industrial security technologies.</p>
+        <span class="award-year">2023</span>
       </div>
     </div>
   </div>
@@ -388,5 +425,78 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="image-accordion.js"></script>
+<script>
+  /* Seamless hero video loop — crossfade two stacked copies at the seam
+     so the loop has a zero-second, gapless transition (no visible jump). */
+  (function () {
+    var wrap = document.querySelector('.hero-video');
+    if (!wrap) return;
+    var vids = wrap.querySelectorAll('video.hv');
+    if (vids.length < 2) return;
+
+    var FADE = 0.7;            // seconds of overlap (>= CSS transition)
+    var cur = vids[0], nxt = vids[1];
+    var armed = false;
+
+    cur.classList.add('show');
+    cur.play().catch(function () {});
+
+    function tick() {
+      if (!cur.duration) return;
+      if (!armed && cur.currentTime >= cur.duration - FADE) {
+        armed = true;
+        nxt.currentTime = 0;
+        nxt.play().catch(function () {});
+        nxt.classList.add('show');   // fade the next copy in
+        cur.classList.remove('show'); // fade the current copy out
+      }
+    }
+    function swap() {
+      cur.pause();
+      var t = cur; cur = nxt; nxt = t; // roles flip; next loop re-arms
+      armed = false;
+    }
+    vids.forEach(function (v) {
+      v.addEventListener('timeupdate', tick);
+      v.addEventListener('ended', swap);
+    });
+  })();
+</script>
+<script>
+  /* Featured Products — interactive image accordion (logo mode). */
+  initImageAccordion(document.getElementById('fpAccordion'), [
+    {
+      title: 'CYRUS ICS Firewall',
+      subtitle: 'OT / ICS Security',
+      imageUrl: 'assets/cyrus-logo.png',
+      href: 'products.html'
+    },
+    {
+      title: 'VMware',
+      subtitle: 'Data Center & Virtualization',
+      imageUrl: 'assets/VMware-Logo.png',
+      href: 'products.html'
+    },
+    {
+      title: 'Fortinet',
+      subtitle: 'IT Firewall & Email',
+      imageUrl: 'assets/Fortinet_logo.svg',
+      href: 'products.html'
+    },
+    {
+      title: 'Kaspersky',
+      subtitle: 'Endpoint Protection',
+      imageUrl: 'assets/kaspersky-logo.jpg',
+      href: 'products.html'
+    },
+    {
+      title: 'Veritas',
+      subtitle: 'Backup & Recovery',
+      imageUrl: 'assets/Veritas-Logo.jpg',
+      href: 'products.html'
+    }
+  ], { defaultActive: 0, logoMode: true });
+</script>
 </body>
 </html>

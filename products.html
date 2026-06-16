@@ -6,8 +6,9 @@
   <title>Products — Total Wisdom Co.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="scroll-reel-testimonials.css" />
 </head>
 <body>
 
@@ -48,6 +49,12 @@
 <section class="section">
   <div class="container">
 
+    <!-- All-products showcase reel -->
+    <div class="section-tag reveal">Full Portfolio</div>
+    <h2 class="section-title centered reveal">Explore <span class="accent">All Products</span></h2>
+    <p class="section-sub centered reveal">Browse every vendor in our portfolio — hover the controls to step through all 15 partner products.</p>
+    <div id="allProductsReel" class="reveal" style="margin:2.5rem 0 4rem;"></div>
+
     <!-- Filter Bar -->
     <div class="filter-bar reveal">
       <button class="filter-btn active" data-cat="all">All Products</button>
@@ -64,8 +71,8 @@
 
       <!-- VMware -->
       <div class="prod-card reveal" data-cat="datacenter">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/wm1-640x478.webp" alt="VMware" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/VMware-Logo.png" alt="VMware" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -77,7 +84,7 @@
       <!-- CYRUS Unidirectional -->
       <div class="prod-card reveal d1" data-cat="ot-ics">
         <div class="prod-img prod-img-logo">
-          <img src="logo-cyrus.png" alt="CYRUS Unidirectional" loading="lazy" />
+          <img src="assets/cyrus-logo.png" alt="CYRUS Unidirectional" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -89,7 +96,7 @@
       <!-- CYRUS Data Diode -->
       <div class="prod-card reveal d2" data-cat="ot-ics">
         <div class="prod-img prod-img-logo">
-          <img src="logo-cyrus.png" alt="CYRUS Data Diode" loading="lazy" />
+          <img src="assets/cyrus-logo.png" alt="CYRUS Data Diode" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -101,7 +108,7 @@
       <!-- CYRUS ICS Firewall -->
       <div class="prod-card reveal d3" data-cat="ot-ics">
         <div class="prod-img prod-img-logo">
-          <img src="logo-cyrus.png" alt="CYRUS ICS Firewall" loading="lazy" />
+          <img src="assets/cyrus-logo.png" alt="CYRUS ICS Firewall" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -112,8 +119,8 @@
 
       <!-- Veritas -->
       <div class="prod-card reveal" data-cat="backup">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/veritas-1-640x478.webp" alt="Veritas" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/Veritas-Logo.jpg" alt="Veritas" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -124,8 +131,8 @@
 
       <!-- Tenable -->
       <div class="prod-card reveal d1" data-cat="network">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/Tenable-1-640x478.webp" alt="Tenable" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/Tenable_logo.svg" alt="Tenable" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -136,8 +143,8 @@
 
       <!-- Symantec -->
       <div class="prod-card reveal d2" data-cat="endpoint">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/Symantec-2-640x478.webp" alt="Symantec" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/Symantec-logo.webp" alt="Symantec" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -148,8 +155,8 @@
 
       <!-- Sophos -->
       <div class="prod-card reveal d3" data-cat="firewall">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/sophos-2-640x478.webp" alt="Sophos" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/Sophos-logo.png" alt="Sophos" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -160,8 +167,8 @@
 
       <!-- Microsoft -->
       <div class="prod-card reveal" data-cat="network">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/09/Microsoft-1-640x478.webp" alt="Microsoft" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/Microsoft_logo.png" alt="Microsoft" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -172,8 +179,8 @@
 
       <!-- MDaemon -->
       <div class="prod-card reveal d1" data-cat="network">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/Cisco-1-640x478.webp" alt="MDaemon" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/MDaemon_Logo.png" alt="MDaemon" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -184,8 +191,8 @@
 
       <!-- Cisco -->
       <div class="prod-card reveal d2" data-cat="datacenter">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/Cisco-1-640x478.webp" alt="Cisco" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/Cisco_logo.png" alt="Cisco" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -196,8 +203,8 @@
 
       <!-- Fortinet -->
       <div class="prod-card reveal d3" data-cat="firewall">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/Fortinet-640x478.webp" alt="Fortinet" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/Fortinet_logo.svg" alt="Fortinet" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -208,8 +215,8 @@
 
       <!-- HPE -->
       <div class="prod-card reveal" data-cat="datacenter">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/hp-2-640x478.webp" alt="Hewlett Packard Enterprise" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/Hewlett_Packard_Enterprise_logo.png" alt="Hewlett Packard Enterprise" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -220,8 +227,8 @@
 
       <!-- Kaspersky -->
       <div class="prod-card reveal d1" data-cat="endpoint">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/08/kasper-1-640x478.webp" alt="Kaspersky" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/kaspersky-logo.jpg" alt="Kaspersky" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -232,8 +239,8 @@
 
       <!-- Bitdefender -->
       <div class="prod-card reveal d2" data-cat="endpoint">
-        <div class="prod-img">
-          <img src="https://totalwisdom.com/wp-content/uploads/2024/02/Bitdefender-1-640x478.webp" alt="Bitdefender" loading="lazy" />
+        <div class="prod-img prod-img-logo">
+          <img src="assets/Bitdefender-Logo.png" alt="Bitdefender" loading="lazy" />
           <div class="prod-img-overlay"></div>
         </div>
         <div class="prod-body">
@@ -243,6 +250,16 @@
       </div>
 
     </div><!-- /products-grid -->
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS (Scroll Reel) ── -->
+<section class="section" style="background:var(--bg-1);">
+  <div class="container">
+    <div class="section-tag reveal">Client Stories</div>
+    <h2 class="section-title centered reveal">Trusted by Teams Who <span class="accent">Can't Compromise</span></h2>
+    <p class="section-sub centered reveal">How enterprises and industrial organizations across the UAE deploy our partner products with Total Wisdom.</p>
+    <div id="srtTestimonials" class="reveal" style="margin-top:3rem;"></div>
   </div>
 </section>
 
@@ -311,5 +328,62 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="scroll-reel-testimonials.js"></script>
+<script>
+  /* All products — scroll reel showcase (logo mode). The reel's
+     "quote" carries the product name, "author" the category. */
+  initScrollReel(document.getElementById('allProductsReel'), [
+    { quote: "VMware",                       author: "Data Center Hardware & Virtualization", image: "assets/VMware-Logo.png",                       alt: "VMware" },
+    { quote: "CYRUS Unidirectional",         author: "OT / ICS Security Solutions",           image: "assets/cyrus-logo.png",                        alt: "CYRUS Unidirectional" },
+    { quote: "CYRUS Data Diode",             author: "OT / ICS Security Solutions",           image: "assets/cyrus-logo.png",                        alt: "CYRUS Data Diode" },
+    { quote: "CYRUS ICS Firewall",           author: "OT / ICS Security Solutions",           image: "assets/cyrus-logo.png",                        alt: "CYRUS ICS Firewall" },
+    { quote: "Veritas",                      author: "Data Backup & Disaster Recovery",       image: "assets/Veritas-Logo.jpg",                      alt: "Veritas" },
+    { quote: "Tenable",                      author: "Network Infrastructure & Security",     image: "assets/Tenable_logo.svg",                      alt: "Tenable" },
+    { quote: "Symantec",                     author: "Endpoint & User Protection",            image: "assets/Symantec-logo.webp",                    alt: "Symantec" },
+    { quote: "Sophos",                       author: "IT Firewall & Email Protection",        image: "assets/Sophos-logo.png",                       alt: "Sophos" },
+    { quote: "Microsoft",                    author: "Network Infrastructure & Security",     image: "assets/Microsoft_logo.png",                    alt: "Microsoft" },
+    { quote: "MDaemon",                      author: "Network Infrastructure & Security",     image: "assets/MDaemon_Logo.png",                      alt: "MDaemon" },
+    { quote: "Cisco",                        author: "Data Center Hardware & Virtualization", image: "assets/Cisco_logo.png",                        alt: "Cisco" },
+    { quote: "Fortinet",                     author: "IT Firewall & Email Protection",        image: "assets/Fortinet_logo.svg",                     alt: "Fortinet" },
+    { quote: "Hewlett Packard Enterprise",   author: "Data Center Hardware & Virtualization", image: "assets/Hewlett_Packard_Enterprise_logo.png",   alt: "Hewlett Packard Enterprise" },
+    { quote: "Kaspersky",                    author: "Endpoint & User Protection",            image: "assets/kaspersky-logo.jpg",                    alt: "Kaspersky" },
+    { quote: "Bitdefender",                  author: "Endpoint & User Protection",            image: "assets/Bitdefender-Logo.png",                  alt: "Bitdefender" }
+  ], { charStaggerMs: 5, logoMode: true, ariaLabel: "All products" });
+
+  /* Placeholder client testimonials — replace quotes, names and
+     portrait images with your real, approved references. */
+  initScrollReel(document.getElementById('srtTestimonials'), [
+    {
+      quote: "Total Wisdom secured our OT network without disrupting a single production line. The CYRUS data diode deployment was flawless.",
+      author: "Ahmed Al-Mansouri — CISO, Emirates Industrial Group",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      alt: "Ahmed Al-Mansouri"
+    },
+    {
+      quote: "We consolidated firewalls, endpoint and backup under one partner. Response times dropped and our audits became far easier.",
+      author: "Sarah Khalifa — IT Director, Gulf Financial Services",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      alt: "Sarah Khalifa"
+    },
+    {
+      quote: "Their Tenable rollout gave us full visibility into vulnerabilities we didn't know existed. Genuinely best-in-class work.",
+      author: "Rajesh Menon — Head of Infrastructure, Dubai Logistics",
+      image: "https://randomuser.me/api/portraits/men/45.jpg",
+      alt: "Rajesh Menon"
+    },
+    {
+      quote: "Migration to VMware and HPE was seamless. The team understood enterprise virtualization at a level we rarely encounter.",
+      author: "Layla Hassan — CTO, NovaTech Solutions",
+      image: "https://randomuser.me/api/portraits/women/68.jpg",
+      alt: "Layla Hassan"
+    },
+    {
+      quote: "Veritas backup and disaster recovery saved us during a ransomware scare. We recovered in hours, not days.",
+      author: "Omar Farouk — Operations Manager, Al Noor Manufacturing",
+      image: "https://randomuser.me/api/portraits/men/52.jpg",
+      alt: "Omar Farouk"
+    }
+  ], { charStaggerMs: 6 });
+</script>
 </body>
 </html>
