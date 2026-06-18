@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — Total Wisdom Co.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .pd-hero { display:grid; grid-template-columns:340px 1fr; gap:3.5rem; align-items:center; }
+    .pd-logo {
+      background:#ffffff; border:1px solid var(--line); border-radius:16px;
+      padding:2.6rem; display:flex; align-items:center; justify-content:center; min-height:220px;
+    }
+    .pd-logo img { max-width:100%; max-height:150px; width:auto; object-fit:contain; display:block; }
+    .pd-lead { font-size:1.15rem; line-height:1.7; color:var(--ink); margin-top:1.2rem; }
+    .pd-body p { margin-bottom:1.1rem; line-height:1.85; }
+    .pd-section-title { font-family:var(--font-serif); font-weight:700; font-size:1.5rem; letter-spacing:-.01em; margin:0 0 1.4rem; }
+    .pd-sub { font-family:var(--font-sans); font-weight:700; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:2rem 0 1rem; }
+    .pd-block { margin-top:3.2rem; }
+    .pd-sol-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .pd-sol {
+      background:var(--bg-card); border:1px solid var(--line); border-radius:12px;
+      padding:1.2rem 1.3rem;
+    }
+    .pd-sol h4 { font-size:.98rem; margin:0 0 .35rem; color:var(--ink); }
+    .pd-sol p { font-size:.86rem; line-height:1.55; color:var(--ink-soft); margin:0; }
+    .pd-apps { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.7rem; }
+    .pd-apps li { display:flex; gap:.7rem; align-items:flex-start; line-height:1.55; color:var(--ink-soft); font-size:.92rem; }
+    .pd-apps li::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--accent); flex-shrink:0; margin-top:.5rem; }
+    .pd-gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; }
+    .pd-gallery img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); box-shadow:0 14px 34px rgba(0,0,0,.28); }
+    .pd-note {
+      margin-top:3.2rem; padding:1.8rem 2rem; border-left:3px solid var(--accent);
+      background:var(--bg-card); border-radius:0 12px 12px 0; font-size:1.02rem; line-height:1.7;
+    }
+    .pd-back { display:inline-flex; align-items:center; gap:.5rem; font-size:.82rem; font-weight:600;
+      letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:1.4rem; }
+    .pd-back:hover { color:var(--accent); }
+    @media(max-width:900px){
+      .pd-hero { grid-template-columns:1fr; gap:2rem; }
+      .pd-logo { max-width:340px; }
+      .pd-sol-grid, .pd-gallery { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"    data-page="home">Home</a></li>
+      <li><a href="services.html" data-page="services">Services</a></li>
+      <li><a href="products.html" data-page="products">Products</a></li>
+      <li><a href="about.html"    data-page="about">About Us</a></li>
+      <li><a href="contact.html"  data-page="contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── PRODUCT HERO ── -->
+<section class="page-hero">
+  <div class="container">
+    <a href="products.html" class="pd-back">&larr; All Products</a>
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a><span>/</span><a href="products.html">Products</a><span>/</span><span id="bcName">Product</span>
+    </div>
+    <div class="section-tag" id="pdCat">Product</div>
+    <h1 id="pdName">Product</h1>
+    <p id="pdLead" class="pd-lead"></p>
+  </div>
+</section>
+
+<!-- ── PRODUCT BODY ── -->
+<section class="section">
+  <div class="container" id="pdContent">
+    <!-- rendered by script -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Interested in <span class="accent" id="ctaName">this solution</span>?</h2>
+      <p>Our certified experts will assess your environment and design a tailored deployment for your organization.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary lg">Request a Quote</a>
+        <a href="products.html" class="btn-ghost lg">Back to Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+          </a>
+          <p>Dubai-based technology solutions provider specializing in cybersecurity, networking, and virtualization services.</p>
+          <p class="tagline">BurJuman Business Tower, Bur Dubai, Dubai, UAE</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Solutions</h5>
+          <ul>
+            <li><a href="products.html">OT/ICS Security</a></li>
+            <li><a href="products.html">Data Center</a></li>
+            <li><a href="products.html">IT Firewall</a></li>
+            <li><a href="products.html">Endpoint Protection</a></li>
+            <li><a href="products.html">Network Security</a></li>
+            <li><a href="products.html">Backup &amp; Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p><a href="tel:+971508338940">+971 50 833 8940</a></p>
+          <p><a href="tel:+971508015940">+971 50 801 5940</a></p>
+          <p><a href="mailto:info@totalwisdom.com">info@totalwisdom.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2024 Total Wisdom Co. All rights reserved.</p>
+      <p>Secure IT &bull; Protect OT &bull; Deliver Smart Technology</p>
+    </div>
+  </div>
+</footer>
+
+<script src="products-data.js"></script>
+<script src="products-licensing.js"></script>
+<script>
+  (function () {
+    function esc(s){ var d=document.createElement('div'); d.textContent=s==null?'':s; return d.innerHTML; }
+    var slug = new URLSearchParams(location.search).get('p');
+    var p = (window.PRODUCTS || {})[slug];
+    var content = document.getElementById('pdContent');
+
+    if (!p) {
+      document.getElementById('pdName').textContent = 'Product not found';
+      document.getElementById('pdCat').textContent = 'Products';
+      document.getElementById('bcName').textContent = 'Not found';
+      content.innerHTML = '<p>Sorry, we couldn’t find that product. <a href="products.html">Browse all products</a>.</p>';
+      return;
+    }
+
+    document.title = p.name + ' — Total Wisdom Co.';
+    document.getElementById('pdName').textContent = p.name;
+    document.getElementById('pdCat').textContent = p.category;
+    document.getElementById('bcName').textContent = p.name;
+    document.getElementById('pdLead').textContent = p.lead || '';
+    document.getElementById('ctaName').textContent = p.name;
+
+    var html = '';
+
+    // Hero: logo + opening description
+    html += '<div class="pd-hero">';
+    html += '<div class="pd-logo"><img src="' + esc(p.logo) + '" alt="' + esc(p.name) + '" /></div>';
+    html += '<div class="pd-body">';
+    (p.body || []).forEach(function (para) { html += '<p>' + esc(para) + '</p>'; });
+    html += '</div></div>';
+
+    // Key solutions
+    if (p.solutions && p.solutions.length) {
+      html += '<div class="pd-block"><h2 class="pd-section-title">Key Solutions</h2><div class="pd-sol-grid">';
+      p.solutions.forEach(function (s) {
+        html += '<div class="pd-sol"><h4>' + esc(s.n) + '</h4><p>' + esc(s.d) + '</p></div>';
+      });
+      html += '</div></div>';
+    }
+
+    // Photos
+    if (p.photos && p.photos.length) {
+      html += '<div class="pd-block"><h2 class="pd-section-title">In Action</h2><div class="pd-gallery">';
+      p.photos.forEach(function (img) {
+        html += '<img src="' + esc(img.src) + '" alt="' + esc(img.alt) + '" loading="lazy" />';
+      });
+      html += '</div></div>';
+    }
+
+    // Applications
+    if (p.applications && p.applications.length) {
+      html += '<div class="pd-block"><h2 class="pd-section-title">Applications</h2><ul class="pd-apps">';
+      p.applications.forEach(function (a) { html += '<li>' + esc(a) + '</li>'; });
+      html += '</ul></div>';
+    }
+
+    // Licensing & editions (from products-licensing.js)
+    var lic = (window.PRODUCT_LICENSING || {})[slug];
+    if (lic) {
+      html += '<div class="pd-block"><h2 class="pd-section-title">' + esc(lic.title || 'Licensing & Editions') + '</h2>';
+      if (lic.intro) { html += '<p style="line-height:1.85;max-width:760px;">' + esc(lic.intro) + '</p>'; }
+      if (lic.glance && lic.glance.length) {
+        html += '<h3 class="pd-sub">Licensing at a Glance</h3><ul class="pd-apps">';
+        lic.glance.forEach(function (g) { html += '<li>' + esc(g) + '</li>'; });
+        html += '</ul>';
+      }
+      if (lic.editions && lic.editions.length) {
+        html += '<h3 class="pd-sub">Editions &amp; Options</h3><div class="pd-sol-grid">';
+        lic.editions.forEach(function (e) {
+          html += '<div class="pd-sol"><h4>' + esc(e.n) + '</h4><p>' + esc(e.d) + '</p></div>';
+        });
+        html += '</div>';
+      }
+      if (lic.tips && lic.tips.length) {
+        html += '<h3 class="pd-sub">Procurement Tips (UAE &amp; GCC)</h3><ul class="pd-apps">';
+        lic.tips.forEach(function (t) { html += '<li>' + esc(t) + '</li>'; });
+        html += '</ul>';
+      }
+      html += '</div>';
+    }
+
+    // Closing note
+    if (p.note) { html += '<div class="pd-note">' + esc(p.note) + '</div>'; }
+
+    content.innerHTML = html;
+  })();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

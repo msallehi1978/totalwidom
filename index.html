@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="image-accordion.css" />
   <style>
@@ -58,8 +59,16 @@
     }
     .hero-shaded .badge-pulse { background: #ff4d6b; }
     .hero-shaded .badge-pulse::before { border-color: #ff4d6b; }
-    .hero-shaded .hero-title { color: #f5f3ff; }
-    .hero-shaded .hero-title .accent { color: #ff4d6b; }
+    .hero-shaded .hero-title {
+      color: #f5f3ff;
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-optical-sizing: auto;
+      font-weight: 600; letter-spacing: -0.005em; line-height: 1.02;
+    }
+    .hero-shaded .hero-title .accent {
+      font-family: 'American Typewriter', 'Courier New', Courier, monospace;
+      font-style: normal; font-weight: 600; color: #ff4d6b;
+    }
     .hero-shaded .hero-sub { color: rgba(255,255,255,.74); }
     .hero-shaded .hero-stats { border-top-color: rgba(255,255,255,.16); }
     .hero-shaded .stat-val, .hero-shaded .stat-suf { color: #ffffff; }
@@ -308,53 +317,6 @@
             <div class="l">& Global Reach</div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── AWARDS ── -->
-<section class="section" style="background:var(--bg-1);">
-  <div class="container">
-    <div class="section-tag reveal">Recognition</div>
-    <h2 class="section-title centered reveal">International <span class="accent">Awards</span></h2>
-    <p class="section-sub centered reveal">CYRUS industrial security solutions have been recognized by leading global innovation competitions.</p>
-    <div class="awards-grid">
-      <div class="award-card reveal">
-        <div class="award-medal gold">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/goldmedal.webp" alt="Gold Medal" />
-        </div>
-        <div class="award-badge gold-badge">Gold Medal</div>
-        <h3>Geneva Inventions Expo</h3>
-        <p>CYRUS was honored with the Gold Medal at the world's most prestigious invention exhibition for its groundbreaking innovation in industrial cybersecurity.</p>
-        <span class="award-year">2024</span>
-      </div>
-      <div class="award-card reveal d1">
-        <div class="award-medal silver">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/silver.webp" alt="Silver Medal" />
-        </div>
-        <div class="award-badge silver-badge">Silver Medal</div>
-        <h3>Silicon Valley Invention Festival</h3>
-        <p>This highly respected tech event recognized CYRUS for its impact in the field of information technology and cybersecurity innovation.</p>
-        <span class="award-year">2024</span>
-      </div>
-      <div class="award-card reveal d2">
-        <div class="award-medal gold">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/goldmedal-1.webp" alt="Gold Medal" />
-        </div>
-        <div class="award-badge gold-badge">Gold Medal</div>
-        <h3>iCAN Innovation Festival</h3>
-        <p>As one of the largest global events in innovation and invention, iCAN awarded CYRUS the top prize for its contribution to secure industrial systems.</p>
-        <span class="award-year">2023</span>
-      </div>
-      <div class="award-card reveal d3">
-        <div class="award-medal gold">
-          <img src="https://totalwisdom.com/wp-content/uploads/2025/11/goldmedal.webp" alt="Gold Medal" />
-        </div>
-        <div class="award-badge gold-badge">Gold Medal</div>
-        <h3>Geneva Inventions Expo</h3>
-        <p>For the second consecutive year, CYRUS received the Gold Medal for its excellence and originality in industrial security technologies.</p>
-        <span class="award-year">2023</span>
       </div>
     </div>
   </div>

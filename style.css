@@ -362,8 +362,7 @@ p  { color: var(--ink-soft); }
 }
 .filter-btn:hover, .filter-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
-.products-grid, .fp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--line); }
-.fp-grid { grid-template-columns: repeat(4,1fr); }
+.products-grid, .fp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; background: var(--line); }
 .prod-card { background: var(--bg); transition: var(--trans); cursor: pointer; }
 .prod-img {
   width: 100%; aspect-ratio: 4/5; overflow: hidden; position: relative;
@@ -388,8 +387,12 @@ p  { color: var(--ink-soft); }
   color: var(--muted); margin-bottom: .4rem;
 }
 .prod-name { font-family: var(--font-serif); font-weight: 600; font-size: 1.15rem; color: var(--ink); letter-spacing: -.01em; }
+.prod-desc { margin-top: .7rem; font-size: .82rem; line-height: 1.55; color: var(--ink-soft); }
+.prod-card[role="link"]:hover .prod-name { color: var(--accent); }
+.prod-card[role="link"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .prod-card[data-hidden="true"] { display: none; }
 
+@media(max-width:1100px){ .products-grid, .fp-grid{ grid-template-columns: repeat(3,1fr); } }
 @media(max-width:900px){ .products-grid, .fp-grid{ grid-template-columns: repeat(2,1fr); } }
 @media(max-width:540px){ .products-grid, .fp-grid{ grid-template-columns: 1fr; } }
 
@@ -518,11 +521,13 @@ p  { color: var(--ink-soft); }
 .awards-grid { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .award-card {
   padding: 2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  position: relative;
+  position: relative; text-align: center;
+  display: flex; flex-direction: column; align-items: center;
 }
+.award-card h3, .award-card p { width: 100%; }
 .award-medal {
-  width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
-  border: 1px solid var(--line-strong); margin-bottom: 1.5rem;
+  width: 220px; height: 170px; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line-strong); margin: 0 auto 1.5rem;
   display: flex; align-items: center; justify-content: center;
 }
 .award-medal img { width: 100%; height: 100%; object-fit: cover; }
@@ -538,7 +543,8 @@ p  { color: var(--ink-soft); }
 .award-card p  { font-size: .88rem; margin-bottom: 1.4rem; }
 .award-year {
   font-family: var(--font-serif); font-weight: 800; font-size: 1.6rem; color: var(--line-strong);
-  letter-spacing: -.01em;
+  letter-spacing: -.01em; display: block; text-align: center; white-space: nowrap;
+  margin-top: auto;
 }
 @media(max-width:1100px){ .awards-grid{ grid-template-columns: repeat(2,1fr); } }
 @media(max-width:560px){ .awards-grid{ grid-template-columns: 1fr; } }

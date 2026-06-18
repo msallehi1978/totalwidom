@@ -27,6 +27,17 @@
     .deliv-item p { font-size: .87rem; margin: 0; }
     @media(max-width:900px){ .deliverables-grid{ grid-template-columns: 1fr 1fr; } }
     @media(max-width:480px){ .deliverables-grid{ grid-template-columns: 1fr; } }
+    /* Two-column service feature (text + illustration) */
+    .svc-feature { display:grid; grid-template-columns:1.05fr .95fr; gap:3.5rem; align-items:center; }
+    .svc-feature.flip .svc-media { order:-1; }
+    .svc-media img {
+      width:100%; height:auto; display:block; border-radius:14px;
+      border:1px solid var(--line); box-shadow:0 18px 40px rgba(0,0,0,.28);
+    }
+    @media(max-width:900px){
+      .svc-feature { grid-template-columns:1fr; gap:2.4rem; }
+      .svc-feature.flip .svc-media { order:0; }
+    }
   </style>
 </head>
 <body>
@@ -65,10 +76,20 @@
 <!-- ── INTRO ── -->
 <section class="section-sm" style="background:var(--bg-1); border-bottom:1px solid var(--border);">
   <div class="container">
-    <div style="max-width:820px; margin:0 auto; text-align:center;">
-      <p class="reveal" style="font-size:1.05rem; line-height:1.85;">
-        Industrial networks — OT/ICS/SCADA/DCS — form the backbone of critical infrastructure in oil &amp; gas, petrochemicals, power generation, water utilities, transportation, and manufacturing. Any cyber-attack or operational disruption may lead to production downtime, financial loss, and safety hazards. Our services provide a comprehensive framework for securing industrial networks and ensuring resilient operations.
-      </p>
+    <div class="svc-feature">
+      <div>
+        <div class="section-tag reveal">Industrial Network Security</div>
+        <h2 class="section-title reveal" style="margin-bottom:1.2rem;">Securing the Backbone of <span class="accent">Critical Infrastructure</span></h2>
+        <p class="reveal" style="font-size:1.05rem; line-height:1.85;">
+          Industrial networks — OT/ICS/SCADA/DCS — form the backbone of critical infrastructure in oil &amp; gas, petrochemicals, power generation, water utilities, transportation, and manufacturing. Any cyber-attack or operational disruption may lead to production downtime, financial loss, and safety hazards.
+        </p>
+        <p class="reveal" style="line-height:1.85;">
+          Aligned with IEC 62443 and NIST SP 800-82, our services provide a comprehensive framework for securing industrial networks and ensuring resilient operations.
+        </p>
+      </div>
+      <div class="svc-media reveal d1">
+        <img src="assets/ics-2.png" alt="OT security aligned with IEC 62443 and NIST standards" loading="lazy" />
+      </div>
     </div>
   </div>
 </section>
@@ -251,6 +272,26 @@
         </div>
         <h4>Measurable KPIs</h4>
         <p>Management dashboards with KPI/KRI metrics providing real-time visibility into your security posture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INDUSTRIAL SECURITY CONSULTING ── -->
+<section class="section">
+  <div class="container">
+    <div class="svc-feature flip">
+      <div class="svc-media reveal">
+        <img src="assets/ics-1.png" alt="Industrial security consulting and advisory" loading="lazy" />
+      </div>
+      <div>
+        <div class="section-tag reveal">Advisory</div>
+        <h2 class="section-title reveal">Industrial Security <span class="accent">Consulting</span></h2>
+        <p class="reveal">Improving the security level of industrial networks — especially control systems — is critical across the UAE and GCC. Our consultants help you build and manage a complete OT/ICS asset inventory, define zones and conduits, and govern incidents, problems, and changes with measurable SLAs.</p>
+        <p class="reveal">Beyond assessment, Total Wisdom delivers industrial asset management with a full CMDB, penetration testing and industrial security assessment, and Industrial SIEM — driving cost savings, risk mitigation, and a stable, resilient production environment.</p>
+        <div class="hero-actions reveal" style="margin-top:1.8rem;">
+          <a href="contact.html" class="btn-primary">Talk to a Consultant</a>
+        </div>
       </div>
     </div>
   </div>
