@@ -2,8 +2,16 @@
    Interactive Image Accordion — vanilla JS port
    Source: 21st.dev/r/minhxthanh/interactive-image-accordion
 
-   Usage: initImageAccordion(containerEl, items, { defaultActive });
+   Usage: initImageAccordion(containerEl, items, opts);
    item = { title, subtitle?, imageUrl, href? }
+   opts = {
+     defaultActive?: number,   // index of the panel expanded on load
+     logoMode?: boolean,       // vendor logos on clean white tiles
+     visibleCount?: number,    // products shown before the Load More tile
+     step?: number,            // products revealed per Load More click
+     loadMore?: boolean,       // append a "Load More" tile
+     loadMoreLabel?: string
+   }
 ────────────────────────────────────────────────────────────── */
 (function (global) {
   function el(tag, cls, attrs) {
@@ -15,8 +23,9 @@
 
   global.initImageAccordion = function initImageAccordion(container, items, opts) {
     if (!container || !items || !items.length) return;
+    opts = opts || {};
     const defaultActive =
-      opts && typeof opts.defaultActive === "number" ? opts.defaultActive : 0;
+      typeof opts.defaultActive === "number" ? opts.defaultActive : 0;
 
     const panels = [];
 
@@ -66,6 +75,75 @@
     });
 
     container.classList.add("iacc");
-    if (opts && opts.logoMode) container.classList.add("logo-mode");
+    if (opts.logoMode) container.classList.add("logo-mode");
+
+    /* ── Pagination: show a "Load More" tile that reveals more panels ── */
+    const step = opts.step > 0 ? opts.step : items.length;
+    let shown = opts.visibleCount > 0 ? Math.min(opts.visibleCount, items.length)
+                                      : items.length;
+
+    if (opts.loadMore && shown < items.length) {
+      const initial = shown;            // window to collapse back to
+      const moreLabel = opts.loadMoreLabel || "Load More";
+      const lessLabel = opts.loadLessLabel || "Show Less";
+
+      // Hide everything past the initial window.
+      panels.forEach(function (p, i) {
+        if (i >= initial) p.classList.add("iacc-hidden");
+      });
+
+      const tile = el("a", "iacc-item iacc-loadmore", {
+        href: "#", role: "button",
+      });
+      const plus = el("span", "iacc-more-plus", { "aria-hidden": "true" });
+      const cap = el("span", "iacc-cap");
+      const sub = el("span", "iacc-sub");
+      tile.append(plus, cap, sub);
+
+      // Reflect the current state on the tile: "Load More (N more)" while
+      // products remain hidden, or "Show Less" once everything is visible.
+      function render() {
+        const atEnd = shown >= items.length;
+        tile.classList.toggle("iacc-showless", atEnd);
+        plus.textContent = atEnd ? "−" : "+";   // − / +
+        cap.textContent = atEnd ? lessLabel : moreLabel;
+        if (atEnd) {
+          sub.textContent = "";
+          tile.setAttribute("aria-label", lessLabel);
+        } else {
+          const remaining = items.length - shown;
+          sub.textContent = remaining + " more";
+          tile.setAttribute("aria-label", moreLabel + " — " + remaining + " more");
+        }
+      }
+
+      function toggle(e) {
+        if (e) e.preventDefault();
+        if (shown >= items.length) {
+          // Collapse back to the initial window.
+          for (let i = initial; i < items.length; i++) {
+            panels[i].classList.add("iacc-hidden");
+          }
+          shown = initial;
+          setActive(panels[0]);          // re-focus the first product
+        } else {
+          // Reveal the next batch.
+          const next = Math.min(shown + step, items.length);
+          for (let i = shown; i < next; i++) {
+            panels[i].classList.remove("iacc-hidden");
+          }
+          shown = next;
+        }
+        render();
+        container.appendChild(tile);     // keep the tile at the end
+      }
+
+      tile.addEventListener("mouseenter", function () { setActive(tile); });
+      tile.addEventListener("click", toggle);
+
+      render();
+      container.appendChild(tile);
+      panels.push(tile);
+    }
   };
 })(window);

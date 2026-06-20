@@ -99,6 +99,15 @@ window.PRODUCTS = {
     note: "For software-rich environments, the CYRUS Unidirectional Gateway is a more evolved solution — combining hardware and software to overcome the limitations of a pure data diode."
   },
 
+  "cyrus-exposure-intelligence": {
+    name: "CYRUS Exposure Intelligence Platform (CEIP)",
+    category: "OT / ICS Security Solutions",
+    logo: "assets/cyrus-logo.png",
+    underConstruction: true,
+    tagline: "Your AI-Powered Security Team. Always On.",
+    lead: "Provide organizations with an AI-powered virtual security team that continuously discovers assets, identifies exposures, analyzes attack paths, prioritizes risks, monitors security posture, and delivers actionable remediation guidance before threats become incidents."
+  },
+
   /* ── Partner products (Data/total wisdom) ── */
   "vmware": {
     name: "VMware",

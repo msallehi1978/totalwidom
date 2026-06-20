@@ -38,6 +38,17 @@
       .svc-feature { grid-template-columns:1fr; gap:2.4rem; }
       .svc-feature.flip .svc-media { order:0; }
     }
+    /* Core card description + powered-by note */
+    .core-powered {
+      font-size: .82rem; margin: 1rem 0 .35rem; color: var(--muted);
+      padding-top: .9rem; border-top: 1px solid var(--border);
+    }
+    .core-powered strong { color: var(--cyan); font-weight: 600; }
+    .core-desc {
+      font-size: .88rem; line-height: 1.65; color: var(--muted);
+      margin: .9rem 0 0;
+    }
+    .core-powered + .core-desc { margin-top: .5rem; }
   </style>
 </head>
 <body>
@@ -46,7 +57,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+      <img src="assets/NTLOGOFinal-2.svg" alt="Total Wisdom Co." />
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -67,9 +78,9 @@
     <div class="hero-breadcrumb">
       <a href="index.html">Home</a><span>/</span><span>Services</span>
     </div>
-    <div class="section-tag">Industrial Network Security</div>
-    <h1>Our <span class="accent">Services</span></h1>
-    <p>Comprehensive OT/ICS/SCADA security services aligned with IEC 62443, NIST SP 800-82, and global best practices — protecting critical infrastructure across every sector.</p>
+    <div class="section-tag">Security · Infrastructure · Resilience</div>
+    <h1>Cybersecurity, IT Infrastructure &amp; <span class="accent">Industrial Security Services</span></h1>
+    <p>Total Wisdom delivers cybersecurity, enterprise IT infrastructure, business continuity, secure data transfer, and industrial security solutions across the UAE and GCC. Our services are supported by specialized CYRUS security platforms designed for enterprise, government, and critical infrastructure environments.</p>
   </div>
 </section>
 
@@ -78,60 +89,17 @@
   <div class="container">
     <div class="svc-feature">
       <div>
-        <div class="section-tag reveal">Industrial Network Security</div>
-        <h2 class="section-title reveal" style="margin-bottom:1.2rem;">Securing the Backbone of <span class="accent">Critical Infrastructure</span></h2>
+        <div class="section-tag reveal">End-to-End Capabilities</div>
+        <h2 class="section-title reveal" style="margin-bottom:1.2rem;">Securing and Operating <span class="accent">Mission-Critical Environments</span></h2>
         <p class="reveal" style="font-size:1.05rem; line-height:1.85;">
-          Industrial networks — OT/ICS/SCADA/DCS — form the backbone of critical infrastructure in oil &amp; gas, petrochemicals, power generation, water utilities, transportation, and manufacturing. Any cyber-attack or operational disruption may lead to production downtime, financial loss, and safety hazards.
+          From enterprise cybersecurity and IT infrastructure to virtualization, cloud, business continuity, secure data transfer, and industrial protection, Total Wisdom helps organizations design, deploy, secure, and operate the systems their business depends on.
         </p>
         <p class="reveal" style="line-height:1.85;">
-          Aligned with IEC 62443 and NIST SP 800-82, our services provide a comprehensive framework for securing industrial networks and ensuring resilient operations.
+          Our services combine proven engineering practices, recognized security standards, and proprietary CYRUS security platforms to reduce risk, strengthen resilience, and keep critical operations running.
         </p>
       </div>
       <div class="svc-media reveal d1">
-        <img src="assets/ics-2.png" alt="OT security aligned with IEC 62443 and NIST standards" loading="lazy" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── STANDARDS FRAMEWORK ── -->
-<section class="section">
-  <div class="container">
-    <div class="section-tag reveal">Methodology</div>
-    <h2 class="section-title reveal">Standards-Based <span class="accent">Framework</span></h2>
-    <p class="section-sub reveal">Our methodology follows global best practices and sector-specific standards to ensure full compliance and maximum security posture.</p>
-    <div class="standards-grid reveal">
-      <div class="standard-item">
-        <div class="std-badge">IEC 62443</div>
-        <p>Security requirements for Industrial Automation and Control Systems (IACS), zone/conduit architecture, Security Levels (SL0–SL4), and Foundational Requirements (FR1–FR7).</p>
-      </div>
-      <div class="standard-item">
-        <div class="std-badge">NIST SP 800-82</div>
-        <p>Practical guidance for OT/ICS/SCADA cybersecurity risk management and security control implementation.</p>
-      </div>
-      <div class="standard-item">
-        <div class="std-badge">NIST CSF 2.0</div>
-        <p>Cybersecurity Framework covering Identify, Protect, Detect, Respond, and Recover functions across the organization.</p>
-      </div>
-      <div class="standard-item">
-        <div class="std-badge">IEC 62351</div>
-        <p>Security for communication in power systems including IEC 61850 protocols and substation automation security.</p>
-      </div>
-      <div class="standard-item">
-        <div class="std-badge">ISO/IEC 27019</div>
-        <p>Information security controls specifically tailored for the energy sector and utility organizations (2024 edition).</p>
-      </div>
-      <div class="standard-item">
-        <div class="std-badge">NERC-CIP</div>
-        <p>Mandatory standards for critical infrastructure protection in energy — covering physical and cyber security requirements.</p>
-      </div>
-      <div class="standard-item">
-        <div class="std-badge">API 1164</div>
-        <p>Cybersecurity framework for pipeline SCADA systems, addressing risk management and security architecture.</p>
-      </div>
-      <div class="standard-item">
-        <div class="std-badge">NIS2 (EU)</div>
-        <p>Governance and reporting requirements for critical industries operating in or connected to European markets.</p>
+        <img src="assets/ics-2.png" alt="Total Wisdom security, infrastructure, and resilience services" loading="lazy" />
       </div>
     </div>
   </div>
@@ -142,82 +110,107 @@
   <div class="container">
     <div class="section-tag reveal">Core Services</div>
     <h2 class="section-title reveal">What We <span class="accent">Deliver</span></h2>
-    <p class="section-sub reveal">Six comprehensive service domains designed to address every dimension of industrial cybersecurity.</p>
+    <p class="section-sub reveal">Six comprehensive service domains spanning cybersecurity, enterprise IT, cloud, resilience, secure data transfer, and industrial protection.</p>
     <div class="core-grid">
 
       <div class="core-card reveal">
         <div class="core-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </div>
-        <h3>Assessment &amp; Risk Analysis</h3>
+        <h3>Cybersecurity Services</h3>
         <ul class="core-bullets">
-          <li><span class="bullet-dot"></span><span>Asset discovery and inventory of OT/ICS devices and communication flows</span></li>
-          <li><span class="bullet-dot"></span><span>Network zoning and conduit definition</span></li>
-          <li><span class="bullet-dot"></span><span>Cyber risk assessment and Target Security Level (SL-T) setting</span></li>
-          <li><span class="bullet-dot"></span><span>GAP Analysis based on IEC 62443 maturity model</span></li>
+          <li><span class="bullet-dot"></span><span>Vulnerability Assessment</span></li>
+          <li><span class="bullet-dot"></span><span>Security Audits</span></li>
+          <li><span class="bullet-dot"></span><span>Security Hardening</span></li>
+          <li><span class="bullet-dot"></span><span>Attack Surface Management</span></li>
+          <li><span class="bullet-dot"></span><span>Exposure Analysis and Risk Prioritization</span></li>
+          <li><span class="bullet-dot"></span><span>Security Monitoring and Reporting</span></li>
+          <li><span class="bullet-dot"></span><span>Continuous Exposure Monitoring powered by CYRUS Exposure Intelligence</span></li>
         </ul>
+        <p class="core-desc">Identify, prioritize, and reduce cyber risks across enterprise environments using security assessments, exposure management, and continuous visibility capabilities.</p>
       </div>
 
       <div class="core-card reveal d1">
         <div class="core-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h4M7 11h2"/></svg>
         </div>
-        <h3>Security Architecture &amp; Design</h3>
+        <h3>Enterprise IT Infrastructure Services</h3>
         <ul class="core-bullets">
-          <li><span class="bullet-dot"></span><span>Layered architecture based on the Purdue Enterprise Reference Model</span></li>
-          <li><span class="bullet-dot"></span><span>Segmentation through zones and conduits with defined trust boundaries</span></li>
-          <li><span class="bullet-dot"></span><span>Industrial DMZ design and IT/OT traffic segregation</span></li>
-          <li><span class="bullet-dot"></span><span>Selection and design of industrial-grade security controls (firewalls, IDS/IPS, data diodes)</span></li>
+          <li><span class="bullet-dot"></span><span>Microsoft Active Directory</span></li>
+          <li><span class="bullet-dot"></span><span>Microsoft Exchange</span></li>
+          <li><span class="bullet-dot"></span><span>Microsoft 365</span></li>
+          <li><span class="bullet-dot"></span><span>Server Deployment</span></li>
+          <li><span class="bullet-dot"></span><span>Storage Solutions</span></li>
+          <li><span class="bullet-dot"></span><span>Virtualization Platforms</span></li>
+          <li><span class="bullet-dot"></span><span>Identity and Access Management</span></li>
+          <li><span class="bullet-dot"></span><span>Infrastructure Design and Optimization</span></li>
         </ul>
+        <p class="core-desc">Design, deploy, and maintain secure and scalable IT infrastructures that support business growth and operational efficiency.</p>
       </div>
 
       <div class="core-card reveal">
         <div class="core-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
         </div>
-        <h3>Implementation &amp; Hardening</h3>
+        <h3>Virtualization &amp; Cloud Services</h3>
         <ul class="core-bullets">
-          <li><span class="bullet-dot"></span><span>Deployment and configuration of industrial firewalls and intrusion detection systems</span></li>
-          <li><span class="bullet-dot"></span><span>Hardening of PLCs, HMIs, RTUs, and engineering workstations</span></li>
-          <li><span class="bullet-dot"></span><span>Identity and access management (IAM, MFA, role-based access)</span></li>
-          <li><span class="bullet-dot"></span><span>Data encryption in transit and at rest, plus secure key management</span></li>
+          <li><span class="bullet-dot"></span><span>VMware Deployment</span></li>
+          <li><span class="bullet-dot"></span><span>Hyper-V Deployment</span></li>
+          <li><span class="bullet-dot"></span><span>Private Cloud Solutions</span></li>
+          <li><span class="bullet-dot"></span><span>Hybrid Cloud Architecture</span></li>
+          <li><span class="bullet-dot"></span><span>Workload Migration</span></li>
+          <li><span class="bullet-dot"></span><span>High Availability Design</span></li>
         </ul>
+        <p class="core-desc">Build resilient virtualized and cloud-enabled infrastructures with performance, availability, and security in mind.</p>
       </div>
 
       <div class="core-card reveal d1">
         <div class="core-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
         </div>
-        <h3>Monitoring &amp; Incident Response</h3>
+        <h3>Business Continuity &amp; Resilience</h3>
         <ul class="core-bullets">
-          <li><span class="bullet-dot"></span><span>Deployment of industrial SIEM and SOC for OT environments</span></li>
-          <li><span class="bullet-dot"></span><span>Continuous log collection, anomaly detection, and threat intelligence integration</span></li>
-          <li><span class="bullet-dot"></span><span>Development of Incident Response Playbooks tailored for OT/ICS</span></li>
-          <li><span class="bullet-dot"></span><span>Red Team/Blue Team and Table-top exercises for resilience testing</span></li>
+          <li><span class="bullet-dot"></span><span>Enterprise Backup Solutions</span></li>
+          <li><span class="bullet-dot"></span><span>Disaster Recovery Planning</span></li>
+          <li><span class="bullet-dot"></span><span>Recovery Testing</span></li>
+          <li><span class="bullet-dot"></span><span>Business Continuity Planning</span></li>
+          <li><span class="bullet-dot"></span><span>Data Protection Strategy</span></li>
         </ul>
+        <p class="core-desc">Protect critical business operations through robust backup, disaster recovery, and continuity frameworks.</p>
       </div>
 
       <div class="core-card reveal">
         <div class="core-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 10V7a5 5 0 0110 0v3"/><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M8 15h2M14 15h2"/></svg>
         </div>
-        <h3>Supply Chain Security</h3>
+        <h3>Secure Data Transfer &amp; Network Isolation</h3>
         <ul class="core-bullets">
-          <li><span class="bullet-dot"></span><span>Supplier security assessment and compliance (IEC 62443-4-1, NERC-CIP-013)</span></li>
-          <li><span class="bullet-dot"></span><span>Secure Development Lifecycle (SDL) and patch management processes</span></li>
+          <li><span class="bullet-dot"></span><span>Secure Database Replication</span></li>
+          <li><span class="bullet-dot"></span><span>Secure File Transfer</span></li>
+          <li><span class="bullet-dot"></span><span>Secure Syslog Forwarding</span></li>
+          <li><span class="bullet-dot"></span><span>Cross-Domain Data Exchange</span></li>
+          <li><span class="bullet-dot"></span><span>Network Isolation Architecture</span></li>
+          <li><span class="bullet-dot"></span><span>Data Diode Deployment</span></li>
         </ul>
+        <p class="core-powered">Powered by <strong>CYRUS Unidirectional Gateway / Data Diode</strong></p>
+        <p class="core-desc">Enable secure one-way communication between trusted and untrusted networks using hardware-enforced network isolation technology. The platform supports dedicated agents for database replication, file transfer, and syslog forwarding while maintaining complete network separation.</p>
       </div>
 
       <div class="core-card reveal d1">
         <div class="core-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4"/></svg>
         </div>
-        <h3>Policy, Training &amp; Audit</h3>
+        <h3>Industrial Security Services</h3>
         <ul class="core-bullets">
-          <li><span class="bullet-dot"></span><span>Development of security policies and OT-specific procedures</span></li>
-          <li><span class="bullet-dot"></span><span>Workforce training and awareness programs for operators and engineers</span></li>
-          <li><span class="bullet-dot"></span><span>Periodic audits and continuous improvement reviews</span></li>
+          <li><span class="bullet-dot"></span><span>OT Security Assessment</span></li>
+          <li><span class="bullet-dot"></span><span>IEC 62443 Readiness</span></li>
+          <li><span class="bullet-dot"></span><span>Industrial Network Segmentation</span></li>
+          <li><span class="bullet-dot"></span><span>Secure Remote Access</span></li>
+          <li><span class="bullet-dot"></span><span>Industrial Firewall Deployment</span></li>
+          <li><span class="bullet-dot"></span><span>Industrial Threat Visibility</span></li>
         </ul>
+        <p class="core-powered">Powered by <strong>CYRUS Industrial Firewall</strong></p>
+        <p class="core-desc">Protect industrial control systems, critical infrastructure, and operational technology networks through specialized cybersecurity architectures and industrial-grade security controls.</p>
       </div>
 
     </div>
@@ -273,25 +266,12 @@
         <h4>Measurable KPIs</h4>
         <p>Management dashboards with KPI/KRI metrics providing real-time visibility into your security posture.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── INDUSTRIAL SECURITY CONSULTING ── -->
-<section class="section">
-  <div class="container">
-    <div class="svc-feature flip">
-      <div class="svc-media reveal">
-        <img src="assets/ics-1.png" alt="Industrial security consulting and advisory" loading="lazy" />
-      </div>
-      <div>
-        <div class="section-tag reveal">Advisory</div>
-        <h2 class="section-title reveal">Industrial Security <span class="accent">Consulting</span></h2>
-        <p class="reveal">Improving the security level of industrial networks — especially control systems — is critical across the UAE and GCC. Our consultants help you build and manage a complete OT/ICS asset inventory, define zones and conduits, and govern incidents, problems, and changes with measurable SLAs.</p>
-        <p class="reveal">Beyond assessment, Total Wisdom delivers industrial asset management with a full CMDB, penetration testing and industrial security assessment, and Industrial SIEM — driving cost savings, risk mitigation, and a stable, resilient production environment.</p>
-        <div class="hero-actions reveal" style="margin-top:1.8rem;">
-          <a href="contact.html" class="btn-primary">Talk to a Consultant</a>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
         </div>
+        <h4>CYRUS Security Platforms</h4>
+        <p>Specialized security technologies including CYRUS Exposure Intelligence, CYRUS Unidirectional Gateway / Data Diode, and CYRUS Industrial Firewall support advanced cybersecurity, secure data transfer, and industrial protection initiatives.</p>
       </div>
     </div>
   </div>
@@ -306,27 +286,39 @@
     <div class="deliverables-grid">
       <div class="deliv-item reveal">
         <div class="deliv-dot"></div>
-        <p>Industrial network architecture diagrams (zones/conduits)</p>
+        <p>Cybersecurity Assessment Reports</p>
       </div>
       <div class="deliv-item reveal d1">
         <div class="deliv-dot"></div>
-        <p>Risk assessment reports and Security Level targets (SL-T)</p>
+        <p>Exposure Intelligence Reports</p>
       </div>
       <div class="deliv-item reveal d2">
         <div class="deliv-dot"></div>
-        <p>GAP Analysis and remediation roadmap</p>
+        <p>Asset Discovery and Risk Analysis</p>
       </div>
       <div class="deliv-item reveal">
         <div class="deliv-dot"></div>
-        <p>Incident Response Playbooks and Disaster Recovery scenarios</p>
+        <p>IT Infrastructure Design Documents</p>
       </div>
       <div class="deliv-item reveal d1">
         <div class="deliv-dot"></div>
-        <p>Management dashboards with KPI/KRI for security posture</p>
+        <p>Security Architecture Documentation</p>
       </div>
       <div class="deliv-item reveal d2">
         <div class="deliv-dot"></div>
-        <p>Hardening checklists and configuration baselines</p>
+        <p>Backup and Disaster Recovery Plans</p>
+      </div>
+      <div class="deliv-item reveal">
+        <div class="deliv-dot"></div>
+        <p>Network Segmentation Designs</p>
+      </div>
+      <div class="deliv-item reveal d1">
+        <div class="deliv-dot"></div>
+        <p>Secure Data Transfer Architectures</p>
+      </div>
+      <div class="deliv-item reveal d2">
+        <div class="deliv-dot"></div>
+        <p>Industrial Security Assessment Reports</p>
       </div>
     </div>
   </div>
@@ -397,11 +389,11 @@
 <section class="section-sm">
   <div class="container">
     <div class="cta-banner reveal">
-      <h2>Start Your <span class="accent">Security Assessment</span></h2>
-      <p>Our certified experts are ready to evaluate your industrial network and deliver a tailored security roadmap.</p>
+      <h2>Build a Secure and Resilient <span class="accent">Digital Infrastructure</span></h2>
+      <p>From enterprise cybersecurity and IT infrastructure to secure data transfer and industrial protection, Total Wisdom helps organizations design, deploy, secure, and operate mission-critical environments using industry-leading technologies and CYRUS security platforms.</p>
       <div class="cta-actions">
-        <a href="contact.html"  class="btn-primary lg">Request Assessment</a>
-        <a href="products.html" class="btn-ghost lg">View Products</a>
+        <a href="contact.html"  class="btn-primary lg">Request Consultation</a>
+        <a href="products.html" class="btn-ghost lg">Explore Our Solutions</a>
       </div>
     </div>
   </div>
@@ -414,10 +406,10 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+            <img src="assets/NTLOGOFinal-2.svg" alt="Total Wisdom Co." />
           </a>
           <p>Dubai-based technology solutions provider specializing in cybersecurity, networking, and virtualization services.</p>
-          <p class="tagline">BurJuman Business Tower, Bur Dubai, Dubai, UAE</p>
+          <p class="tagline">A03 - 16F, Empire Heights A, Business Bay, Dubai, UAE</p>
         </div>
         <div class="footer-col">
           <h5>Navigation</h5>
@@ -432,12 +424,12 @@
         <div class="footer-col">
           <h5>Services</h5>
           <ul>
-            <li><a href="services.html">Assessment &amp; Risk Analysis</a></li>
-            <li><a href="services.html">Security Architecture</a></li>
-            <li><a href="services.html">Implementation &amp; Hardening</a></li>
-            <li><a href="services.html">Monitoring &amp; IR</a></li>
-            <li><a href="services.html">Supply Chain Security</a></li>
-            <li><a href="services.html">Policy &amp; Training</a></li>
+            <li><a href="services.html">Cybersecurity Services</a></li>
+            <li><a href="services.html">Enterprise IT Infrastructure</a></li>
+            <li><a href="services.html">Virtualization &amp; Cloud</a></li>
+            <li><a href="services.html">Business Continuity</a></li>
+            <li><a href="services.html">Secure Data Transfer</a></li>
+            <li><a href="services.html">Industrial Security</a></li>
           </ul>
         </div>
         <div class="footer-col">

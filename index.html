@@ -17,9 +17,6 @@
     @media(max-width:900px){ .home-about-grid{ grid-template-columns:1fr; gap:3rem; } }
     .home-about p { margin-bottom: 1rem; }
     .featured-products { background: var(--bg-1); }
-    .fp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
-    @media(max-width:900px){ .fp-grid{ grid-template-columns:repeat(2,1fr); } }
-    @media(max-width:480px){ .fp-grid{ grid-template-columns:1fr; } }
     .view-all-wrap { text-align:center; margin-top: 2.5rem; }
 
     /* ── HERO BACKGROUND VIDEO (right half) ── */
@@ -85,7 +82,7 @@
     .hero-shaded .btn-ghost:hover { background: #ffffff; color: #0a0a1a; border-color: #ffffff; }
 
     /* Navbar sits over the dark hero while at the top (not yet scrolled) */
-    #navbar:not(.scrolled) .nav-logo img { filter: brightness(0) invert(1); }
+    #navbar:not(.scrolled) .nav-logo img { filter: none; }
     #navbar:not(.scrolled) .nav-links a:not(.nav-cta) { color: rgba(255,255,255,.82); }
     #navbar:not(.scrolled) .nav-links a:not(.nav-cta):hover,
     #navbar:not(.scrolled) .nav-links a:not(.nav-cta).active { color: #ffffff; }
@@ -101,7 +98,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+      <img src="assets/NTLOGOFinal-2.svg" alt="Total Wisdom Co." />
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -277,6 +274,7 @@
     <h2 class="section-title centered reveal">Featured <span class="accent">Products</span></h2>
     <p class="section-sub centered reveal">Partnering with the world's leading technology vendors to deliver best-in-class security and infrastructure solutions.</p>
     <div id="fpAccordion" class="reveal" style="margin-top:3rem;"></div>
+
     <div class="view-all-wrap reveal">
       <a href="products.html" class="btn-primary">View All Products</a>
     </div>
@@ -289,32 +287,47 @@
     <div class="home-about-grid">
       <div>
         <div class="section-tag reveal">Who We Are</div>
-        <h2 class="section-title reveal">Dubai's <span class="accent">Trusted</span> Technology &amp; Security Partner</h2>
-        <p class="reveal">Total Wisdom Co. is a Dubai-based technology solutions provider specializing in cybersecurity, networking, and virtualization services. We deliver cutting-edge solutions tailored to the needs of modern enterprises, government entities, and industrial organizations.</p>
-        <p class="reveal">From protecting sensitive networks with advanced firewalls and unidirectional gateways, to optimizing IT environments through cloud virtualization — we empower businesses to operate safely and efficiently in a connected world.</p>
-        <p class="reveal">Backed by seasoned engineers and security experts, we deliver customized, scalable, and future-ready IT services across the UAE and beyond.</p>
+        <h2 class="section-title reveal">Securing Critical Operations in a <span class="accent">Connected World</span></h2>
+        <p class="reveal">Total Wisdom delivers cybersecurity, enterprise infrastructure, and industrial security solutions for organizations that cannot afford downtime, data loss, or operational disruption.</p>
+        <p class="reveal">We help enterprises, government entities, and critical infrastructure operators strengthen their security posture through advanced cybersecurity services, resilient IT architectures, secure data transfer technologies, business continuity solutions, and industrial network protection.</p>
+        <p class="reveal">Our expertise spans enterprise IT, cloud and virtualization platforms, cyber defense, secure data exchange, and operational technology (OT) security—enabling organizations to operate with confidence in an increasingly connected world.</p>
+        <p class="reveal">Combining globally trusted technologies with internationally recognized innovations, we provide scalable and future-ready solutions that improve visibility, reduce cyber exposure, and strengthen operational resilience across both enterprise and industrial environments.</p>
         <div class="hero-actions reveal" style="margin-top:2rem; margin-bottom:0;">
           <a href="about.html" class="btn-primary">About Us</a>
           <a href="contact.html" class="btn-ghost">Get in Touch</a>
         </div>
       </div>
-      <div class="glow-box reveal d1">
-        <div class="glow-box-grid">
-          <div class="glow-stat">
-            <div class="n"><span data-target="15">0</span>+</div>
-            <div class="l">Technology Partners</div>
+      <div class="info-stat-grid">
+        <div class="info-card stat-card reveal d1">
+          <div class="info-card-inner">
+            <div class="info-card-content">
+              <div class="info-stat-n"><span data-target="15">0</span>+</div>
+              <div class="info-stat-l">Technology Partners</div>
+            </div>
           </div>
-          <div class="glow-stat">
-            <div class="n"><span data-target="4">0</span> 🥇</div>
-            <div class="l">International Awards</div>
+        </div>
+        <div class="info-card stat-card reveal d1">
+          <div class="info-card-inner">
+            <div class="info-card-content">
+              <div class="info-stat-n"><span data-target="4">0</span> 🥇</div>
+              <div class="info-stat-l">International Innovation Awards</div>
+            </div>
           </div>
-          <div class="glow-stat">
-            <div class="n"><span data-target="6">0</span>+</div>
-            <div class="l">Service Areas</div>
+        </div>
+        <div class="info-card stat-card reveal d2">
+          <div class="info-card-inner">
+            <div class="info-card-content">
+              <div class="info-stat-n"><span data-target="6">0</span>+</div>
+              <div class="info-stat-l">Specialized Service Areas</div>
+            </div>
           </div>
-          <div class="glow-stat">
-            <div class="n">UAE</div>
-            <div class="l">& Global Reach</div>
+        </div>
+        <div class="info-card stat-card reveal d2">
+          <div class="info-card-inner">
+            <div class="info-card-content">
+              <div class="info-stat-n">UAE &amp; GCC</div>
+              <div class="info-stat-l">Regional Presence</div>
+            </div>
           </div>
         </div>
       </div>
@@ -343,10 +356,10 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+            <img src="assets/NTLOGOFinal-2.svg" alt="Total Wisdom Co." />
           </a>
           <p>Dubai-based technology solutions provider specializing in cybersecurity, networking, and virtualization services.</p>
-          <p class="tagline">BurJuman Business Tower, Bur Dubai, Dubai, UAE</p>
+          <p class="tagline">A03 - 16F, Empire Heights A, Business Bay, Dubai, UAE</p>
         </div>
         <div class="footer-col">
           <h5>Navigation</h5>
@@ -387,7 +400,6 @@
 </footer>
 
 <script src="script.js"></script>
-<script src="image-accordion.js"></script>
 <script>
   /* Seamless hero video loop — crossfade two stacked copies at the seam
      so the loop has a zero-second, gapless transition (no visible jump). */
@@ -398,8 +410,14 @@
     if (vids.length < 2) return;
 
     var FADE = 0.7;            // seconds of overlap (>= CSS transition)
+    var RATE = 0.7;            // 70% of normal playback speed
     var cur = vids[0], nxt = vids[1];
     var armed = false;
+
+    vids.forEach(function (v) {
+      v.playbackRate = RATE;
+      v.addEventListener('loadedmetadata', function () { v.playbackRate = RATE; });
+    });
 
     cur.classList.add('show');
     cur.play().catch(function () {});
@@ -425,40 +443,66 @@
     });
   })();
 </script>
+<script src="products-data.js"></script>
+<script src="image-accordion.js"></script>
 <script>
-  /* Featured Products — interactive image accordion (logo mode). */
-  initImageAccordion(document.getElementById('fpAccordion'), [
-    {
-      title: 'CYRUS ICS Firewall',
-      subtitle: 'OT / ICS Security',
-      imageUrl: 'assets/cyrus-logo.png',
-      href: 'products.html'
-    },
-    {
-      title: 'VMware',
-      subtitle: 'Data Center & Virtualization',
-      imageUrl: 'assets/VMware-Logo.png',
-      href: 'products.html'
-    },
-    {
-      title: 'Fortinet',
-      subtitle: 'IT Firewall & Email',
-      imageUrl: 'assets/Fortinet_logo.svg',
-      href: 'products.html'
-    },
-    {
-      title: 'Kaspersky',
-      subtitle: 'Endpoint Protection',
-      imageUrl: 'assets/kaspersky-logo.jpg',
-      href: 'products.html'
-    },
-    {
-      title: 'Veritas',
-      subtitle: 'Backup & Recovery',
-      imageUrl: 'assets/Veritas-Logo.jpg',
-      href: 'products.html'
+  /* Featured Products — interactive image accordion (21st.dev port, logo mode)
+     with pagination: 5 product tiles + a "Load More" tile (6 items to start),
+     each click reveals 5 more products. Panel links resolve to product pages
+     via the shared data file (single source of truth for name -> slug). */
+  (function () {
+    var data = window.PRODUCTS || {};
+    var bySlug = {};
+    Object.keys(data).forEach(function (slug) { bySlug[data[slug].name] = slug; });
+    var dedicatedPages = {
+      'CYRUS Exposure Intelligence Platform (CEIP)': 'cyrus-exposure.html'
+    };
+    function hrefFor(name) {
+      if (dedicatedPages[name]) return dedicatedPages[name];
+      var slug = bySlug[name];
+      return slug ? 'product.html?p=' + slug : 'products.html';
     }
-  ], { defaultActive: 0, logoMode: true });
+
+    /* Curated featured line-up. The first five are the headline groupings
+       shown before the Load More tile; the rest are revealed 5 at a time.
+       `title` is the caption, `name` resolves the link via the data file,
+       and an explicit `href` overrides it (used for multi-brand group tiles). */
+    var FEATURED = [
+      { title: 'CYRUS Security Products',           subtitle: 'OT / ICS Security',          imageUrl: 'assets/cyrus-logo.png',                       href: 'products.html' },
+      { title: 'HPE / EMC / DELL Enterprise Products', subtitle: 'Data Center & Infrastructure', imageUrl: 'assets/Hewlett_Packard_Enterprise_logo.png', href: 'products.html' },
+      { title: 'Dr.Web / Kaspersky',                subtitle: 'Endpoint Protection',        imageUrl: 'assets/kaspersky-logo.jpg',                   href: 'products.html' },
+      { name: 'Symantec',                           subtitle: 'Endpoint & User Protection', imageUrl: 'assets/Symantec-logo.webp' },
+      { name: 'Microsoft',                          subtitle: 'Productivity & Cloud',       imageUrl: 'assets/Microsoft_logo.png' },
+
+      /* ── revealed by Load More (vendors not covered by the groups above) ── */
+      { name: 'Fortinet',    subtitle: 'IT Firewall & Email Protection', imageUrl: 'assets/Fortinet_logo.svg' },
+      { name: 'Sophos',      subtitle: 'IT Firewall & Email Protection', imageUrl: 'assets/Sophos-logo.png' },
+      { name: 'Cisco',       subtitle: 'Data Center & Networking',       imageUrl: 'assets/Cisco_logo.png' },
+      { name: 'VMware',      subtitle: 'Virtualization & Cloud',         imageUrl: 'assets/VMware-Logo.png' },
+      { name: 'Veritas',     subtitle: 'Backup & Disaster Recovery',     imageUrl: 'assets/Veritas-Logo.jpg' },
+      { name: 'Bitdefender', subtitle: 'Endpoint & User Protection',     imageUrl: 'assets/Bitdefender-Logo.png' },
+      { name: 'Tenable',     subtitle: 'Exposure Management',            imageUrl: 'assets/Tenable_logo.svg' },
+      { name: 'MDaemon',     subtitle: 'Email Security',                 imageUrl: 'assets/MDaemon_Logo.png' }
+    ];
+
+    var items = FEATURED.map(function (p) {
+      return {
+        title: p.title || p.name,
+        subtitle: p.subtitle,
+        imageUrl: p.imageUrl,
+        href: p.href || hrefFor(p.name)
+      };
+    });
+
+    initImageAccordion(document.getElementById('fpAccordion'), items, {
+      defaultActive: 0,
+      logoMode: true,
+      visibleCount: 5,        // 5 product tiles + Load More tile = 6 items to start
+      step: 5,                // reveal 5 more products per click
+      loadMore: true,
+      loadMoreLabel: 'Load More'
+    });
+  })();
 </script>
 </body>
 </html>

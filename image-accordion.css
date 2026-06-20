@@ -39,12 +39,19 @@
   color: #fff; font-family: var(--font-sans, sans-serif);
   font-size: 1.125rem; font-weight: 600; letter-spacing: .01em;
   white-space: nowrap;
-  bottom: 6rem; transform: translateX(-50%) rotate(90deg);
+  /* Vertically centred so a long rotated title uses the full tile height
+     and its end ("Products") can't be clipped past the bottom edge. */
+  bottom: calc(50% - 0.7rem); transform: translateX(-50%) rotate(90deg);
   transform-origin: center; transition: all .3s ease-in-out;
   text-shadow: 0 1px 8px rgba(0, 0, 0, .45);
 }
 .iacc-item.active .iacc-cap {
-  bottom: 1.5rem; transform: translateX(-50%) rotate(0deg);
+  bottom: 1.4rem; transform: translateX(-50%) rotate(0deg);
+  /* Wrap long titles inside the expanded panel instead of overflowing. */
+  white-space: normal;
+  max-width: calc(100% - 2.8rem);
+  text-align: center;
+  line-height: 1.2;
 }
 
 /* Small category label that fades in on the active panel */
@@ -59,7 +66,8 @@
   transition: opacity .35s ease .1s;
   text-shadow: 0 1px 8px rgba(0, 0, 0, .5);
 }
-.iacc-item.active .iacc-sub { opacity: 1; }
+/* Sits above the title; lifted so a two-line title clears it. */
+.iacc-item.active .iacc-sub { opacity: 1; bottom: 4.2rem; }
 
 /* ── Logo mode: vendor logos on clean white tiles ── */
 .iacc.logo-mode .iacc-item {
@@ -77,6 +85,46 @@
 .iacc.logo-mode .iacc-cap { color: #090834; text-shadow: none; }
 .iacc.logo-mode .iacc-sub { color: #ed053b; text-shadow: none; }
 
+/* ── Pagination ── */
+.iacc-item.iacc-hidden { display: none; }
+
+/* "Load More" tile — an accent panel that stands apart from the
+   product tiles (kept colored even in logo mode). */
+.iacc-loadmore,
+.iacc.logo-mode .iacc-loadmore {
+  background: linear-gradient(165deg, #0f5e57 0%, #07332f 130%);
+  border: none;
+}
+.iacc.logo-mode .iacc-loadmore img,
+.iacc-loadmore .iacc-overlay { display: none; }
+
+.iacc-loadmore .iacc-more-plus {
+  position: absolute; top: 2.4rem; left: 50%;
+  transform: translateX(-50%);
+  width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, .75);
+  display: grid; place-items: center;
+  color: #fff; font-size: 1.5rem; font-weight: 400; line-height: 1;
+  transition: background .3s ease, transform .3s ease;
+}
+.iacc-loadmore:hover .iacc-more-plus {
+  background: rgba(255, 255, 255, .16); transform: translateX(-50%) scale(1.08);
+}
+/* Keep the Load More caption light on the accent tile (logo mode darkens
+   product captions, so override with higher specificity here). */
+.iacc-loadmore .iacc-cap,
+.iacc.logo-mode .iacc-loadmore .iacc-cap { color: #fff; text-shadow: none; }
+.iacc-loadmore .iacc-sub,
+.iacc.logo-mode .iacc-loadmore .iacc-sub { color: rgba(255, 255, 255, .85); text-shadow: none; }
+
+/* Collapse ("Show Less") state — accent red tile to distinguish it from
+   the teal "Load More" tile. */
+.iacc-loadmore.iacc-showless,
+.iacc.logo-mode .iacc-loadmore.iacc-showless {
+  background: linear-gradient(165deg, #090834 0%, #ed053b 135%);
+}
+.iacc-loadmore.iacc-showless .iacc-more-plus { font-size: 1.7rem; }
+
 @media (max-width: 768px) {
   .iacc {
     justify-content: flex-start;
@@ -85,6 +133,8 @@
   }
   .iacc-item { height: 360px; }
   .iacc-item.active { width: 260px; }
+  /* Shorter tiles → smaller caption so long rotated titles still fit. */
+  .iacc-cap { font-size: .98rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

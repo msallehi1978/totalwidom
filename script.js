@@ -104,6 +104,15 @@ if (form) {
   });
 }
 
+/* ── INFO CARD POINTER-TRACKED BORDER ── */
+document.querySelectorAll('.info-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const ang = Math.atan2(e.clientY - (r.top + r.height / 2), e.clientX - (r.left + r.width / 2)) * 180 / Math.PI;
+    card.style.setProperty('--rotation', (ang + 90) + 'deg');
+  });
+});
+
 /* ── SMOOTH SCROLL ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

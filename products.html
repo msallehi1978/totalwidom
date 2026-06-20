@@ -16,7 +16,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+      <img src="assets/NTLOGOFinal-2.svg" alt="Total Wisdom Co." />
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -212,7 +212,20 @@
         </div>
       </div>
 
-      <!-- 12. Microsoft -->
+      <!-- 12. CYRUS Exposure Intelligence Platform -->
+      <div class="prod-card reveal d3" data-cat="ot-ics">
+        <div class="prod-img prod-img-logo">
+          <img src="assets/cyrus-logo.png" alt="CYRUS Exposure Intelligence Platform (CEIP)" loading="lazy" />
+          <div class="prod-img-overlay"></div>
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat">OT / ICS Security Solutions</p>
+          <p class="prod-name">CYRUS Exposure Intelligence Platform (CEIP)</p>
+          <p class="prod-desc">Your AI-powered security team, always on — continuously discovers assets, identifies exposures, analyzes attack paths, and prioritizes risks before threats become incidents.</p>
+        </div>
+      </div>
+
+      <!-- 13. Microsoft -->
       <div class="prod-card reveal d3" data-cat="network">
         <div class="prod-img prod-img-logo">
           <img src="assets/Microsoft_logo.png" alt="Microsoft" loading="lazy" />
@@ -302,10 +315,10 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <img src="https://totalwisdom.com/wp-content/uploads/2025/08/NTLOGOFinalW.svg" alt="Total Wisdom Co." />
+            <img src="assets/NTLOGOFinal-2.svg" alt="Total Wisdom Co." />
           </a>
           <p>Dubai-based technology solutions provider specializing in cybersecurity, networking, and virtualization services.</p>
-          <p class="tagline">BurJuman Business Tower, Bur Dubai, Dubai, UAE</p>
+          <p class="tagline">A03 - 16F, Empire Heights A, Business Bay, Dubai, UAE</p>
         </div>
         <div class="footer-col">
           <h5>Navigation</h5>
@@ -362,6 +375,7 @@
     { quote: "CYRUS Industrial Firewall",    author: "OT / ICS Security Solutions",           image: "assets/cyrus-logo.png",                        alt: "CYRUS Industrial Firewall" },
     { quote: "CYRUS Unidirectional Gateway", author: "OT / ICS Security Solutions",           image: "assets/cyrus-logo.png",                        alt: "CYRUS Unidirectional Gateway" },
     { quote: "CYRUS Data Diode",             author: "OT / ICS Security Solutions",           image: "assets/cyrus-logo.png",                        alt: "CYRUS Data Diode" },
+    { quote: "CYRUS Exposure Intelligence",  author: "OT / ICS Security Solutions",           image: "assets/cyrus-logo.png",                        alt: "CYRUS Exposure Intelligence Platform (CEIP)" },
     { quote: "Microsoft",                    author: "Network Infrastructure & Security",     image: "assets/Microsoft_logo.png",                    alt: "Microsoft" },
     { quote: "Kaspersky",                    author: "Endpoint & User Protection",            image: "assets/kaspersky-logo.jpg",                    alt: "Kaspersky" },
     { quote: "Bitdefender",                  author: "Endpoint & User Protection",            image: "assets/Bitdefender-Logo.png",                  alt: "Bitdefender" },
@@ -383,14 +397,21 @@
       'CYRUS Unidirectional': 'cyrus-unidirectional',
       'CYRUS ICS Firewall': 'cyrus-ics-firewall'
     };
+    // Products with their own dedicated page (bypass the generic product.html).
+    var dedicatedPages = {
+      'CYRUS Exposure Intelligence Platform (CEIP)': 'cyrus-exposure.html'
+    };
 
     document.querySelectorAll('.prod-card').forEach(function (card) {
       var nameEl = card.querySelector('.prod-name');
       if (!nameEl) return;
       var label = nameEl.textContent.trim();
-      var slug = aliases[label] || bySlug[label];
-      if (!slug) return;
-      var url = 'product.html?p=' + slug;
+      var url = dedicatedPages[label];
+      if (!url) {
+        var slug = aliases[label] || bySlug[label];
+        if (!slug) return;
+        url = 'product.html?p=' + slug;
+      }
 
       card.style.cursor = 'pointer';
       card.setAttribute('role', 'link');
