@@ -90,19 +90,7 @@ if (filterBtns.length) {
   });
 }
 
-/* ── CONTACT FORM ── */
-const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn  = form.querySelector('.btn-primary');
-    const orig = btn.textContent;
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = '#2e8b57';
-    btn.style.borderColor = '#2e8b57';
-    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.borderColor = ''; form.reset(); }, 3500);
-  });
-}
+/* Contact-form submission is handled inline in contact.html (Web3Forms → info@totalwisdom.com). */
 
 /* ── INFO CARD POINTER-TRACKED BORDER ── */
 document.querySelectorAll('.info-card').forEach(card => {
