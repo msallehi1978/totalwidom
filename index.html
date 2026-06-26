@@ -155,7 +155,8 @@
     .hero-video {
       position: absolute; top: 0; right: 0; bottom: 0;
       width: 50%; z-index: 0; overflow: hidden;
-      pointer-events: none; background: #090834;
+      pointer-events: none;
+      background: #090834 url('assets/hero-poster.jpg') center/cover no-repeat;
     }
     .hero-video .hv {
       position: absolute; inset: 0;
@@ -238,7 +239,8 @@
       <li><a href="index.html"    data-page="home">Home</a></li>
       <li><a href="services.html" data-page="services">Services</a></li>
       <li><a href="products.html" data-page="products">Products</a></li>
-      <li><a href="about.html"    data-page="about">About Us</a></li>
+      <li><a href="/articles" data-page="articles">Articles</a></li>
+      <li><a href="about.html" data-page="about">About Us</a></li>
       <li><a href="contact.html"  data-page="contact" class="nav-cta">Contact</a></li>
     </ul>
   </div>
@@ -247,8 +249,8 @@
 <!-- ── HERO ── -->
 <section class="home-hero hero-shaded">
   <div class="hero-video" aria-hidden="true">
-    <video class="hv" src="assets/output.mp4" autoplay muted playsinline preload="auto"></video>
-    <video class="hv" src="assets/output.mp4" muted playsinline preload="auto"></video>
+    <video class="hv" src="assets/output.mp4" muted playsinline preload="none" poster="assets/hero-poster.jpg"></video>
+    <video class="hv" src="assets/output.mp4" muted playsinline preload="none" poster="assets/hero-poster.jpg"></video>
   </div>
   <div class="hero-grid"></div>
   <div class="container">
@@ -490,7 +492,7 @@
             <img src="assets/NTLOGOFinal-2.svg" alt="Total Wisdom Co." />
           </a>
           <p>Dubai-based technology solutions provider specializing in cybersecurity, networking, and virtualization services.</p>
-          <p class="tagline">A03 - 16F, Empire Heights A, Business Bay, Dubai, UAE</p>
+          <p class="tagline">A03 - 16F, Empire Heights Tower A, Business Bay, Dubai, UAE</p>
         </div>
         <div class="footer-col">
           <h5>Navigation</h5>
@@ -498,6 +500,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="products.html">Products</a></li>
+            <li><a href="/articles">Articles</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -533,25 +536,30 @@
 <script src="script.js"></script>
 <script>
   /* Seamless hero video loop — crossfade two stacked copies at the seam
-     so the loop has a zero-second, gapless transition (no visible jump). */
+     so the loop has a zero-second, gapless transition (no visible jump).
+
+     Core Web Vitals safeguards:
+       • preload="none" + deferred start (after load / idle) so the video
+         never competes with the LCP for bandwidth or main-thread time;
+       • prefers-reduced-motion honored — we keep the static poster instead;
+       • playback pauses when the hero scrolls off-screen or the tab is
+         hidden, so no decode/GPU work happens when it isn't visible. */
   (function () {
     var wrap = document.querySelector('.hero-video');
     if (!wrap) return;
     var vids = wrap.querySelectorAll('video.hv');
     if (vids.length < 2) return;
 
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     var FADE = 0.7;            // seconds of overlap (>= CSS transition)
     var RATE = 0.7;            // 70% of normal playback speed
     var cur = vids[0], nxt = vids[1];
-    var armed = false;
+    var armed = false, started = false, booted = false, onScreen = true;
 
     vids.forEach(function (v) {
       v.playbackRate = RATE;
       v.addEventListener('loadedmetadata', function () { v.playbackRate = RATE; });
     });
-
-    cur.classList.add('show');
-    cur.play().catch(function () {});
 
     function tick() {
       if (!cur.duration) return;
@@ -572,6 +580,46 @@
       v.addEventListener('timeupdate', tick);
       v.addEventListener('ended', swap);
     });
+
+    function start() {
+      if (started || !booted || reduce.matches || !onScreen || document.hidden) return;
+      started = true;
+      cur.load();                 // preload="none" — fetch only now, post-LCP
+      cur.classList.add('show');
+      cur.play().catch(function () { started = false; });
+    }
+    function resume() { started ? cur.play().catch(function () {}) : start(); }
+    function pauseAll() { cur.pause(); nxt.pause(); }
+
+    // Pause when the hero leaves the viewport.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (e) {
+        onScreen = e[0].isIntersecting;
+        if (!onScreen) pauseAll();
+        else if (!document.hidden) resume();
+      }, { threshold: 0.01 }).observe(wrap);
+    }
+
+    // Pause while the tab is in the background.
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) pauseAll();
+      else if (onScreen) resume();
+    });
+
+    // Stop if the user switches reduced-motion on mid-session.
+    if (reduce.addEventListener) {
+      reduce.addEventListener('change', function (e) { if (e.matches) pauseAll(); });
+    }
+
+    // Defer the very first start until the page is idle and painted.
+    function boot() {
+      if (reduce.matches) return;   // honor reduced-motion: keep the poster
+      booted = true;
+      if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 });
+      else setTimeout(start, 300);
+    }
+    if (document.readyState === 'complete') boot();
+    else window.addEventListener('load', boot);
   })();
 </script>
 <script src="products-data.js"></script>
